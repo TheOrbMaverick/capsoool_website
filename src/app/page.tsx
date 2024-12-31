@@ -12,7 +12,7 @@ const Home: React.FC = () => {
       </Head>
 
       {/* Hero Section */}
-      <div className="flex-grow bg-cover bg-center text-white py-20 px-4" style={{ backgroundImage: "url('/hero-section2.webp')" }}>
+      <div className="flex-grow bg-cover bg-center text-white py-20 px-4" style={{ backgroundImage: "url('/hero-section3.webp')" }}>
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl font-bold">
             Download the Capsoool App
