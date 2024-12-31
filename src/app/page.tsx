@@ -13,11 +13,11 @@ const Home: React.FC = () => {
 
       {/* Hero Section */}
       <div className="flex-grow bg-cover bg-center text-white py-20 px-4" style={{ backgroundImage: "url('/hero-section3.webp')" }}>
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto text-center mt-20 pt-40">
           <h1 className="text-4xl md:text-6xl font-bold">
             Download the Capsoool App
           </h1>
-          <p className="text-lg md:text-2xl mt-4">
+          <p className="text-lg md:text-2xl mt-4 font-bold">
             Access everything you need, right at your fingertips.
           </p>
           <div className="flex justify-center gap-4 mt-8">
