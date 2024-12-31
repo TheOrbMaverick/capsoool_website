@@ -6,7 +6,7 @@ const Home: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Head>
-        <title>Oneredbox App</title>
+        <title>Capsoool App</title>
         <meta name="description" content="Download the Oneredbox App for iOS and Android" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
