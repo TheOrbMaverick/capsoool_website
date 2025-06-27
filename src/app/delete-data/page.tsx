@@ -10,7 +10,7 @@ export default function DeleteDataPage() {
       <h2 className="text-xl font-semibold mb-2">How to Request Data Deletion</h2>
       <ul className="list-disc list-inside mb-4">
         <li>Send an email to <strong>support@capsoool.com</strong> from your registered email address.</li>
-        <li>Include the subject: <strong>"Delete My Data (Capsoool)"</strong>.</li>
+        <li>Include the subject: <strong>&quot;Delete My Data (Capsoool)&quot;</strong>.</li>
         <li>Specify exactly what data you would like deleted (e.g. activity history, saved content, preferences, etc.).</li>
       </ul>
 

@@ -10,7 +10,7 @@ export default function DeleteAccountPage() {
       <h2 className="text-xl font-semibold mb-2">How to Request Account Deletion</h2>
       <ul className="list-disc list-inside mb-4">
         <li>Send an email to <strong>support@capsoool.com</strong> from the email associated with your account.</li>
-        <li>Include the subject line: <strong>"Delete My Capsoool Account"</strong>.</li>
+        <li>Include the subject line: <strong>&quot;Delete My Capsoool Account&quot;</strong>.</li>
         <li>We will process your request within 7 business days and confirm via email.</li>
       </ul>
 
