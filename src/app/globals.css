@@ -9,7 +9,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #161622;
     --foreground: #ededed;
   }
 }
@@ -19,3 +19,52 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.header-1 {
+    @apply text-[5rem] leading-[88px] font-normal;
+  }
+  .header-2 {
+    @apply text-[2.5rem] leading-[44px] font-normal tracking-[1.5%];
+  }
+
+  .header-3 {
+    @apply text-[2rem] leading-[40px] font-normal tracking-[2%];
+  }
+  .header-4 {
+    @apply text-[1.5rem] leading-[32px] tracking-[2.5%];
+  }
+
+  .header-5 {
+    @apply text-[1.25rem] leading-[24px] tracking-[3%];
+  }
+
+  .b6-regular {
+    @apply font-sans text-[2rem] leading-[150%] tracking-[1%] font-normal;
+  }
+  .b1-regular {
+    @apply font-sans text-[1.5rem] leading-[150%] tracking-[2%] font-normal;
+  }
+  .b1-medium {
+    @apply font-sans text-[1.5rem] leading-[150%] tracking-[2%] font-medium;
+  }
+  .b2-regular {
+    @apply font-sans text-[1.125rem] leading-[150%] tracking-[2%] font-normal;
+  }
+  .b3-regular {
+    @apply font-sans text-[1rem] leading-[24px] tracking-[2%] font-normal;
+  }
+  .b3-semibold {
+    @apply font-sans text-[1rem] leading-[24px] tracking-[2%] font-semibold;
+  }
+  .b4-regular {
+    @apply font-sans text-[14px] leading-[24px] tracking-[2.5%] font-normal;
+  }
+  .b4-semibold {
+    @apply font-sans text-[14px] leading-[24px] tracking-[2.5%] font-semibold;
+  }
+  .b5-regular {
+    @apply font-sans text-[12px] leading-[18px] tracking-[2.5%] font-normal;
+  }
+  .text-shadow {
+    @apply [text-shadow:0px_0px_30px_rgba(0,0,0,0.25)];
+  }
