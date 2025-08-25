@@ -10,13 +10,10 @@ import { ChevronLeft, ChevronRight, Heart, MapPin, Scan } from "lucide-react";
 import { useRef } from "react";
 import Image from "next/image";
 import { mauline, poppins } from "@/utils/fonts";
-import IOSButton from "../IOSButton";
-import AndroidButton from "../AndroidButton";
 // import { maulineLocal, poppins } from "@/constants/fonts";
 
 export default function SetupSection() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const bgColors = ["#DFC8FC", "#FFE8C8", "#DDF3D0"];
 
   return (
     <section

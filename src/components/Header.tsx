@@ -1,28 +1,12 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React from "react";
 import CTAButton from "./CTAButton";
 import { poppins } from "@/utils/fonts";
-import { Menu, X } from "lucide-react";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
 import HamburgerMenu from "./Hamburger";
 
 export default function Header() {
-  const [hamburgerCtrl, setHamburgerCtrl] = useState<gsap.core.Timeline>();
-  useGSAP(() => {
-    const tl = gsap.timeline({ defaults: { duration: 1, paused: true } });
-    const animateHamburgerIn = tl
-      .from("#hamburger-container", {
-        width: 0,
-        height: 0,
-        padding: 0,
-        paused: true,
-      })
-      .from("#hamburger", { width: 0, height: 0, padding: 0 });
-    setHamburgerCtrl(animateHamburgerIn);
-  }, []);
   return (
     <section>
       <header className="px-[5rem] hidden  py-2 lg:flex items-center justify-between ">

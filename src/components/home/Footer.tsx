@@ -1,4 +1,4 @@
-import { mauline, poppins } from "@/utils/fonts";
+import { mauline } from "@/utils/fonts";
 import React from "react";
 
 export default function Footer() {

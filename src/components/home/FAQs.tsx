@@ -1,6 +1,5 @@
 import { faqs } from "@/constants/faqs";
 import { mauline } from "@/utils/fonts";
-import { ChevronDown } from "lucide-react";
 import React from "react";
 import Accordion from "../Accordion";
 
@@ -12,7 +11,7 @@ export default function FAQs() {
       >
         <p>Got Questions?</p>
         <p>
-          We've Got <span className="text-blue-500">Answers</span>
+          We&apos;ve Got <span className="text-blue-500">Answers</span>
         </p>
       </div>
 

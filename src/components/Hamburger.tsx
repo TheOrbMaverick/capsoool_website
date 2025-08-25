@@ -32,7 +32,7 @@ export default function HamburgerMenu() {
         ease: "power2.in",
       });
     }
-  }, []);
+  }, [menuOpen]);
 
   const toggleMenu = () => {
     if (!menuOpen) {
