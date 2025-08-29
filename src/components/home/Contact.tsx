@@ -4,7 +4,7 @@ import React from "react";
 
 export default function Contact() {
   return (
-    <section className="container mx-auto px-4 py-[5rem]">
+    <section className="container lg:max-w-[1200px] mx-auto px-4 py-[5rem]">
       <div className="flex flex-col lg:flex-row gap-12 items-center">
         <div className="flex-1">
           <p
@@ -27,15 +27,15 @@ export default function Contact() {
           </div>
 
           <div className="flex mt-4 lg:mt-12 gap-8">
-            <span>
-              <Instagram />
+            <span className="w-10 h-10 inline-block">
+              <Instagram width={"100%"} height={"100%"} />
             </span>
-            <span>
-              <Twitter />
+            <span className="w-10 h-10 inline-block">
+              <Twitter width={"100%"} height={"100%"} />
             </span>
 
-            <span>
-              <Facebook />
+            <span className="w-10 h-10 inline-block">
+              <Facebook width={"100%"} height={"100%"} />
             </span>
           </div>
         </div>

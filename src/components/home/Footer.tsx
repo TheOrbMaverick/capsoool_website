@@ -4,10 +4,12 @@ import React from "react";
 export default function Footer() {
   return (
     <section className="px-4 lg:px-12 py-12">
-      <div className="py-[4rem]  px-4 lg:px-20 rounded-3xl lg:rounded-[2.5rem] bg-blue-950 bg-opacity-30">
+      <div className="py-[4rem]  px-4 lg:px-20 lg:max-w-[1200px] mx-auto rounded-3xl lg:rounded-[2.5rem] border border-blue-300 bg-blue-500 bg-opacity-10">
         <div className="lg:flex gap-y-6 grid grid-cols-12 justify-between">
           <div className="col-start-1 col-end-13">
-            <h2 className={`text-3xl ${mauline.className} `}>Capsoool</h2>
+            <h2 className={`text-3xl ${mauline.className} text-blue500`}>
+              Capsoool
+            </h2>
           </div>
 
           <div className="flex row-start-2 col-start-1 col-end-4 gap-20">

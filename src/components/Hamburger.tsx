@@ -50,7 +50,7 @@ export default function HamburgerMenu() {
       slideOutRef.current?.play();
       setMenuOpen(false);
     }
-  }, [location]);
+  }, [location, menuOpen]);
 
   return (
     <div className="relative z-[10000000]">

@@ -5,7 +5,7 @@ import { Navigation } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/navigation";
-import { ChevronLeft, ChevronRight, Heart, MapPin, Scan } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 // import QrScan from "../icons/qr-scan";
 import { useRef } from "react";
 import Image from "next/image";
@@ -18,14 +18,14 @@ export default function SetupSection() {
   return (
     <section
       ref={containerRef}
-      className={`m min-h-[100dvh] 2xl:min-h-[auto] max-h- [56.25rem] font-sans  z-[2] text-bento-purple-dark relative py[3rem] xl: py-[5rem] px-4 md:px-8 2xl:py-[9rem] lg:px-16 2xl:px-32 setup-section bg-white  bg-opacity-5`}
+      className={`m min-h-[100dvh] 2xl:min-h-[auto] max-h- [56.25rem] font-sans  z-[2] text-bento-purple-dark relative py[3rem] xl: py-[5rem] px-4 md:px-8 2xl:py-[9rem] lg:px-16 2xl:px-32 setup-section bg-blue-500  bg-opacity-5`}
     >
       <div>
         <div className="text-center">
           <h2
             className={`mb-4 lg:mb-8 text-center text-[2.5rem] leading-none lg:text-[80px] md:header-1 ${mauline.className}`}
           >
-            A Glimpse inside <span className="text-blue-500">Capsoools</span>
+            Easy Setup
           </h2>
           <p
             className={`b3-regular md:b1-regular text-shadow text-bento-purple-dark ${poppins.className}`}
@@ -105,8 +105,8 @@ export default function SetupSection() {
             </div>
           </div>
           <div className="relative flex items-center mt-10 md:mt-0 md:gap-8">
-            <div className="text-[80px] cursor-pointer prev w-9 h-9 md:w-14 md:h-14 flex justify-center items-center bg-white rounded-full shadow-md">
-              <div className="w-7 h-7 md:w-10 md:h-10">
+            <div className="text-[80px] cursor-pointer prev w-9 h-9 md:w-14 md:h-14 flex justify-center items-center bg-blue-500 bg-opacity-10 border border-blue-300 rounded-full shadow-md">
+              <div className="w-7 h-7 md:w-10 md:h-10 text-blue-500">
                 <ChevronLeft width={"100%"} height={"100%"} />
               </div>
             </div>
@@ -128,79 +128,11 @@ export default function SetupSection() {
                   </p>
                 </div>
               </div>
-              <div className="w-[247px]  md:w-[21.9375rem] h-[456px] relative mx-auto  md:h-[40.4375rem]  flex justify-center items-center overflow-hidden">
-                <div className="absolute  -right-full third-slide-container w-full h-full flex justify-center items-center">
-                  <div className="w-[250px] h-[543px] relative">
-                    <div className="absolute top-[90px] -right-0 md:-right-8 z-[10000] ">
-                      <div className="p-1 px-2 md:p-3 rounded-full bg-white flex items-center gap-2 shadow-md">
-                        <Image
-                          width={16}
-                          height={16}
-                          src="/images/fire.png"
-                          alt="fire illustration"
-                          className="md:hidden"
-                        />
-                        <Image
-                          width={24}
-                          height={24}
-                          src="/images/fire.png"
-                          alt="fire illustration"
-                          className="hidden md:block"
-                        />
-                        <p className="text-sm md:text-base">
-                          2764 photos shared
-                        </p>
-                      </div>
-                    </div>
-                    <div className="absolute bottom-[180px] left-0 md:-left-7 z-50 ">
-                      <div className="p-1 px-2 md:p-3 rounded-full bg-white flex items-center gap-2 shadow-md">
-                        <Image
-                          width={16}
-                          height={16}
-                          src="/images/party-popper.png"
-                          alt="party pop"
-                          className="md:hidden"
-                        />
-                        <Image
-                          width={24}
-                          height={24}
-                          src="/images/party-popper.png"
-                          alt="party pop"
-                          className="hidden md:block"
-                        />
-                        <p className="text-sm md:text-base">
-                          231 wishes shared
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="absolute bottom-24 md:bottom-8 -right-0 md:-right-10 z-50 ">
-                      <div className="p-1 px-2 md:p-3 rounded-full bg-white flex items-center gap-2 shadow-md">
-                        <Image
-                          width={16}
-                          height={16}
-                          src="/images/red-heart.png"
-                          alt="party pop"
-                          className="md:hidden"
-                        />
-                        <Image
-                          width={24}
-                          height={24}
-                          src="/images/red-heart.png"
-                          alt="party pop"
-                          className="hidden md:block"
-                        />
-                        <p className="text-xs md:text-base">
-                          183 guests liked this video
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute  w-[210px] h-[420px] md:w-[290px] border-4 border-blue-600  md:h-[590px] [mask-image:url('/images/Rectangle112.png')] z[100000] [mask-size:cover] [mask-position:center] [mask-repeat:no-repeat] ">
+              <div className="w-[247px]  md:w-[21.9375rem] h-[456px] relative mx-auto   md:h-[40.4375rem]  flex justify-center items-center overflow-hidden">
+                <div className="absolute  w-[210px] h-[420px] md:w-[290px]   md:h-[590px] ">
                   <div
-                    className="w-full h-full border-4 border-blue-600"
-                    style={{ borderWidth: 4, borderColor: "red" }}
+                    className="w-full h-full"
+                    // style={{ borderWidth: 4, borderColor: "red" }}
                   >
                     <Swiper
                       modules={[Navigation]}
@@ -277,140 +209,38 @@ export default function SetupSection() {
                         }
                       }}
                     >
-                      <SwiperSlide
-                        className=""
-                        style={{
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          // width: "250px",
-                          // height: "543px",
-                        }}
-                      >
-                        <div className="w-full h-full md:w-[250px] md:h-[543px] rounded3xl  bg-[url('/images/step1-bg.webp')] bg-opacity-10 bg-blend-darken bg-[length:200%_100%] bg-center bg-no-repeat relative overflow-hidden">
-                          <div className="absolute bg-white bg-opacity-85 z-30 w-full h-full flex flex-col justify-end pb-6 items-center ">
-                            <div className="flex flex-col scale-75 md:scale-100 relative top-[20%] md:top-0  items-center w-full">
-                              <div className="flex flex-col items-center">
-                                <div className="w-[46px] h-[46px] rounded-full bg-[#9747FF] flex justify-center items-center">
-                                  <Heart
-                                    fill="#fcf3f5"
-                                    stroke="#fcf3f5"
-                                    width={24}
-                                    height={24}
-                                  />
-                                </div>
-                                <div className="h-8 inline-block w-[5px] rounded-full bg-[#9747FF] -translate-y-[5%]"></div>
-                              </div>
-
-                              <div className="">
-                                <h3 className="text-[#2E0464] text-[18px] text-center">
-                                  Will &amp; Janet
-                                </h3>
-                              </div>
-
-                              <div className="flex flex-col items-center">
-                                <div className="h-8 inline-block w-[5px] rounded-full bg-[#9747FF] translate-y-[5%]"></div>
-                                <div className="w-[46px] h-[46px] rounded-full bg-[#9747FF] flex justify-center items-center">
-                                  <MapPin
-                                    stroke="#fcf3f5"
-                                    width={24}
-                                    height={24}
-                                  />
-                                </div>
-                                <div className="h-8 inline-block w-[5px] rounded-full bg-[#9747FF] -translate-y-[5%]"></div>
-                              </div>
-
-                              <h3 className="text-[18px] text-[#2E0464]">
-                                The Wildflower Ridge
-                              </h3>
-
-                              <div className="flex flex-col items-center w-full">
-                                <div className="h-8 inline-block w-[5px] rounded-full bg-[#9747FF] translate-y-[5%]"></div>
-                                <div className="relative w-full flex justify-center">
-                                  <div className="absolute w-full h-full flex z-[100  ] items-center px-4">
-                                    <div className="flex justify-between w-full">
-                                      <div className="w-6 h-6 rounded-full bg-[#CB006D4D] bg-opacity-30"></div>
-                                      <div className="w-6 h-6 rounded-full bg-[#73B760]"></div>
-                                      <div className="w-[24px] h-[24px] rounded-full z-50 relative bg-[#FFAA00]"></div>
-                                      <div className="w-[24px] h-[24px] rounded-full z-50 relative bg-[#DFC8FF]"></div>
-                                      <div className="w-[24px] h-[24px] rounded-full bg-[#9AAEFF]"></div>
-                                    </div>
-                                  </div>
-                                  <div className="w-[46px] h-[46px] relative rounded-full border-[5px] border-[#9747FF] bg-[#FCFCFC] flex justify-center items-center overflow-hidden"></div>
-                                </div>
-                                <div className="h-8 inline-block w-[5px] rounded-full bg-[#9747FF] -translate-y-[5%]"></div>
-                              </div>
-                              <h3 className="text-center text-[#2E0464]">
-                                Yellow Theme
-                              </h3>
-                            </div>
-                            <button className="px-4 py-1 md:px-8 md:py-2 rounded-lg bg-[#9747FF] mt-10 text-white">
-                              Set Up
-                            </button>
-                          </div>
-                        </div>
+                      <SwiperSlide style={{ height: 500 }}>
+                        <Image
+                          src={"/images/security-phone-mockup.png"}
+                          width={"1000"}
+                          height={"1000"}
+                          alt="Secure"
+                        />
                       </SwiperSlide>
-                      <SwiperSlide
-                        className=""
-                        style={{
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                        }}
-                      >
-                        <div className="w-full h-full md:w-[250px] relative md:h-[543px] overflow-hidden ">
-                          <div className="absolute w-full h-full inset-[0%]">
-                            <div className="w-full h-full rounded3xl bg-center  bg-[url('/images/step2.webp')] bg-opacity-40 bg-blend-darken bg-cover  p-4 bg-no-repeat flex items-end justify-center relative overflow-hidden">
-                              <div className="absolute w-full h-full bg-black bg-opacity-10"></div>
-                              <div className="p-4 w-full flex justify-center flex-col items-center bg-black bg-opacity-25 rounded-2xl text-white text-center">
-                                <h3 className="font-sacramento text-[24px] md:text-[32px]">
-                                  Will &amp; Janet
-                                </h3>
-                                {/* <QrScan /> */}
-                                <Scan />
-                                <p className="text-sm">Scan to Join the Fun!</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+                      <SwiperSlide style={{ height: 500 }}>
+                        <Image
+                          src={"/images/home-phone-mockup.png"}
+                          width={"1000"}
+                          height={"1000"}
+                          alt="Secure"
+                        />
                       </SwiperSlide>
-                      <SwiperSlide
-                        style={{
-                          display: "flex",
-                          justifyContent: "center",
-                          alignItems: "center",
-                          borderWidth: 4,
-                          borderColor: "blue",
-                        }}
-                      >
-                        <>
-                          <div className="absolute top-1 left-1 right-1 md:top-4 bottom-0">
-                            <Image
-                              fill
-                              src="/images/setup/3.jpg"
-                              alt="content"
-                              className="w-full h-full"
-                            />
-                          </div>
-                          <div className=" h-[543px] relative z-40  overflow-y-hidden w-full md:w-[250px]"></div>
-                        </>
+                      <SwiperSlide style={{ height: 500 }}>
+                        <Image
+                          src={"/images/home-phone-mockup.png"}
+                          width={"1000"}
+                          height={"1000"}
+                          alt="Secure"
+                        />
                       </SwiperSlide>
                     </Swiper>
                   </div>
                 </div>
-                <div className="relative -z-10 w-[214px] md:w-[304px] h-[415px] items-center md:h-[589px]  flex justify-center border4 border-green-400 mx-auto">
-                  <Image
-                    fill
-                    src="/images/Rectangle11.webp"
-                    alt="Mockup"
-                    className=" setuphone w-full relative z-[10] h-full"
-                  />
-                </div>
               </div>
             </div>
 
-            <div className="text-[80px] next cursor-pointer w-9 h-9 md:w-14 md:h-14 flex justify-center items-center bg-white rounded-full shadow-md">
-              <div className="w-7 h-7 md:w-10 md:h-10">
+            <div className="text-[80px] next cursor-pointer w-9 h-9 md:w-14 md:h-14 flex justify-center items-center bg-blue-500 bg-opacity-10 border border-blue-300 rounded-full shadow-md">
+              <div className="w-7 h-7 md:w-10 md:h-10 text-blue-500">
                 <ChevronRight width={"100%"} height={"100%"} />
               </div>
             </div>

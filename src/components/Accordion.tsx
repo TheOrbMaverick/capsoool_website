@@ -61,7 +61,7 @@ export default function Accordion({ triggerText, content }: IAccordion) {
 
   return (
     <div
-      className={`cursor-pointer w-full max-w-[800px] accordion-container bg-blue-500 py-3 md:py-8 px-2 md:px-10 rounded-xl mdLrounded-3xl lg:rounded-[32px] ${
+      className={`cursor-pointer w-full max-w-[800px] accordion-container bg-blue-500 bg-opacity-10 border-2 border-blue-300 bgblue-500 py-3 md:py-4 px-2 md:px-6 rounded-xl mdLrounded-3xl lg:rounded-[16px] ${
         isOpen && "shadow-lg"
       }`}
       onClick={() => toggleAccordionFunc()}
@@ -87,7 +87,7 @@ export default function Accordion({ triggerText, content }: IAccordion) {
 
           <div
             ref={accordionContentRef}
-            className="accordion-content h-0 overflow-hidden"
+            className="accordion-content h-0  overflow-hidden"
           >
             <div className={` 2xl:text-base ${poppins.className}`}>
               {content}
