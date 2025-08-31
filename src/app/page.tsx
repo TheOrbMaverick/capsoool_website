@@ -4,6 +4,7 @@ import FAQs from "@/components/home/FAQs";
 import Features from "@/components/home/Features";
 import Footer from "@/components/home/Footer";
 import Hero from "@/components/home/Hero";
+import Pricing from "@/components/home/Pricing";
 import Setup from "@/components/home/Setup";
 
 const Home: React.FC = () => {
@@ -11,6 +12,7 @@ const Home: React.FC = () => {
     <div className="min-h-[100dvh]">
       <Hero />
       <Features />
+      <Pricing/>
       <Setup />
       <FAQs />
       <Contact />

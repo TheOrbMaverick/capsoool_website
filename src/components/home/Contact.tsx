@@ -1,5 +1,5 @@
 import { mauline } from "@/utils/fonts";
-import { Facebook, Instagram, Mail, Twitter } from "lucide-react";
+import { Instagram, Mail, Twitter } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
@@ -27,29 +27,24 @@ export default function Contact() {
 
           <div className="flex mt-4 lg:mt-12 gap-8">
             <Link
-              href={""}
+              href={"mailto:support@capsoool.com"}
               className="w-10 h-10 inline-block border rounded-xl p-1 border-blue-300 bg-blue-500 bg-opacity-10 text-blue-300"
             >
               <Mail width={"100%"} height={"100%"} />
             </Link>
             <Link
-              href={""}
+              href={"https://www.instagram.com/capsoool_app"}
+              target="_"
               className="w-10 h-10 inline-block border rounded-xl p-1 border-blue-300 bg-blue-500 bg-opacity-10 text-blue-300"
             >
               <Instagram width={"100%"} height={"100%"} />
             </Link>
             <Link
-              href={""}
+              href={"https://x.com/Capsoool_App"}
+              target="_"
               className="w-10 h-10 inline-block border rounded-xl p-1 border-blue-300 bg-blue-500 bg-opacity-10 text-blue-300"
             >
               <Twitter width={"100%"} height={"100%"} />
-            </Link>
-
-            <Link
-              href={""}
-              className="w-10 h-10 inline-block border rounded-xl p-1 border-blue-300 bg-blue-500 bg-opacity-10 text-blue-300"
-            >
-              <Facebook width={"100%"} height={"100%"} />
             </Link>
           </div>
         </div>

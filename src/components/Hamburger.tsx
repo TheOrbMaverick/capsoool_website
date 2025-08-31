@@ -50,7 +50,7 @@ export default function HamburgerMenu() {
       slideOutRef.current?.play();
       setMenuOpen(false);
     }
-  }, [location, menuOpen]);
+  }, [location]);
 
   return (
     <div className="relative z-[10000000]">
@@ -97,21 +97,19 @@ export default function HamburgerMenu() {
             </Link>
             <div className="">
               <nav className="flex flex-col text-[#222] gap-[10px]">
-                {["Features", "Pricing", "Contact Us", "About"].map(
-                  (item, i) => (
-                    <Link
-                      href={`/${item.toLowerCase()}`}
-                      key={i}
-                      className="p-[10px] hover:bg-gray-200 rounded-full"
-                      onClick={() => {
-                        slideOutRef.current?.restart();
-                        setMenuOpen(false);
-                      }}
-                    >
-                      {item}
-                    </Link>
-                  )
-                )}
+                {["Features", "Pricing", "Contact Us"].map((item, i) => (
+                  <Link
+                    href={`/#${item.split(" ").join("-").toLowerCase()}`}
+                    key={i}
+                    className="p-[10px] hover:bg-gray-200 rounded-full"
+                    onClick={() => {
+                      slideOutRef.current?.restart();
+                      setMenuOpen(false);
+                    }}
+                  >
+                    {item}
+                  </Link>
+                ))}
               </nav>
             </div>
           </div>

@@ -7,7 +7,7 @@ import Future from "../abstracts/Future";
 
 export default function Hero() {
   return (
-    <section className="overflow-y-hidden">
+    <section className="overflow-hidden">
       <div className="absolute -z-[2] text-white text-opacity-5 left-[25%]">
         <Future
           className="stroke-blue-300/10 scale"
