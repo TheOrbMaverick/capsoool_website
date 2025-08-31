@@ -3,9 +3,12 @@ import { mauline } from "@/utils/fonts";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Instagram, Mail, Twitter } from "lucide-react";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import z from "zod";
+import emailjs from "@emailjs/browser";
+
+emailjs.init({ publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY! });
 
 const formSchema = z.object({
   name: z.string().nullable(),
@@ -14,6 +17,7 @@ const formSchema = z.object({
 });
 
 export default function Contact() {
+  const [submitting, setSubmitting] = useState<boolean>(false);
   const {
     handleSubmit,
     register,
@@ -28,7 +32,24 @@ export default function Contact() {
   });
 
   async function submitMessage(values: z.infer<typeof formSchema>) {
-    console.log(values);
+    setSubmitting(true);
+    try {
+      const { name, email, message } = values;
+      const res = await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        {
+          name,
+          email,
+          message,
+        }
+      );
+      console.log(res);
+    } catch (error) {
+      console.log("Error", error);
+    } finally {
+      setSubmitting(false);
+    }
   }
   return (
     <section
@@ -118,9 +139,10 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="bg-blue-500 px-4 py-3 rounded-lg font-semibold w-full"
+                disabled={submitting}
+                className="bg-blue-500 disabled:bg-blue-300/70 px-4 py-3 rounded-lg font-semibold w-full"
               >
-                Submit
+                {!submitting ? "Submit" : "Submitting..."}
               </button>
             </div>
           </form>
