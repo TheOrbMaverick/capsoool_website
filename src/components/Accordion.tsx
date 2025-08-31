@@ -61,8 +61,8 @@ export default function Accordion({ triggerText, content }: IAccordion) {
 
   return (
     <div
-      className={`cursor-pointer w-full max-w-[800px] accordion-container bg-blue-500 bg-opacity-10 border-2 border-blue-300 bgblue-500 py-3 md:py-4 px-2 md:px-6 rounded-xl mdLrounded-3xl lg:rounded-[16px] ${
-        isOpen && "shadow-lg"
+      className={`cursor-pointer w-full max-w-[800px] accordion-container bg-blue-500 bg-opacity-10 border- border-blue-200 border-opacity-50 bgblue-500 py-3 md:py-4 px-2 md:px-6 rounded-xl mdLrounded-3xl lg:rounded-[16px] shadow-[4px_6px_4px_rgba(59,130,246,0.2)] ${
+        isOpen && "shadow-lg border-2"
       }`}
       onClick={() => toggleAccordionFunc()}
       ref={accordionContainerRef}

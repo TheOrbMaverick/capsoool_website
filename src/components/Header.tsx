@@ -10,7 +10,7 @@ export default function Header() {
   return (
     <section>
       <header className="px-[5rem] hidden  py-2 lg:flex items-center justify-between ">
-        <div className="flex items-center">
+        <Link href={"/"} className="flex items-center">
           <h1
             className={`flex items-center text-3xl font-semibold ${poppins.className}`}
           >
@@ -18,7 +18,7 @@ export default function Header() {
             <span>
               {" "}
               <Image
-                src={"/images/icon.png"}
+                src={"/images/capsoool_stroke_logo.png"}
                 width={50}
                 height={100}
                 alt="Capsoool Logo"
@@ -26,7 +26,7 @@ export default function Header() {
             </span>
             l
           </h1>
-        </div>
+        </Link>
 
         <div className="flex items-center gap-12">
           <nav>
@@ -36,7 +36,7 @@ export default function Header() {
                   key={index}
                   className=" px-4 py-1 hover:bg-white/10 transition-all duration-300 rounded-full"
                 >
-                  <Link href={`/${link.split(" ").join("-").toLowerCase()}`}>
+                  <Link href={`/#${link.split(" ").join("-").toLowerCase()}`}>
                     {link}
                   </Link>
                 </li>
@@ -49,7 +49,7 @@ export default function Header() {
       </header>
 
       <header className="px-[1rem]  py-2 flex lg:hidden items-center justify-between ">
-        <div className="flex items-center">
+        <Link href={"/"} className="flex items-center">
           <h1
             className={`flex items-center text-3xl font-semibold ${poppins.className}`}
           >
@@ -57,7 +57,7 @@ export default function Header() {
             <span>
               {" "}
               <Image
-                src={"/images/icon.png"}
+                src={"/images/capsoool_stroke_logo.png"}
                 width={50}
                 height={100}
                 alt="Capsoool Logo"
@@ -65,7 +65,7 @@ export default function Header() {
             </span>
             l
           </h1>
-        </div>
+        </Link>
 
         {/* <div
           id="hamburger-container"

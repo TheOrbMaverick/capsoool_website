@@ -1,46 +1,60 @@
 import { mauline } from "@/utils/fonts";
-import { Facebook, Instagram, Twitter } from "lucide-react";
+import { Facebook, Instagram, Mail, Twitter } from "lucide-react";
+import Link from "next/link";
 import React from "react";
 
 export default function Contact() {
   return (
-    <section className="container lg:max-w-[1200px] mx-auto px-4 py-[5rem]">
+    <section
+      id="contact-us"
+      className="container lg:max-w-[1200px] mx-auto px-4 py-[5rem]"
+    >
       <div className="flex flex-col lg:flex-row gap-12 items-center">
         <div className="flex-1">
           <p
             className={`${mauline.className} mb-4 lg:mb-12 text-[2.5rem] lg:text-[80px] leading-none`}
           >
-            Reach Out to Us
+            Get in Touch
           </p>
 
           <div className="space-y-4">
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas
-              deleniti ratione, voluptatem ad soluta delectus quasi dolore
-              accusamus nam ullam?
-            </p>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora
-              optio nesciunt dolor error numquam libero, quam corrupti
-              dignissimos architecto sed deserunt cumque quas modi odio.
+            <p className="max-w-[450px] text-lg leading-[200%]">
+              Have questions or feedback about Capsoools? We’d love to hear from
+              you. Reach out and let’s build a future where memories last
+              forever.
             </p>
           </div>
 
           <div className="flex mt-4 lg:mt-12 gap-8">
-            <span className="w-10 h-10 inline-block">
+            <Link
+              href={""}
+              className="w-10 h-10 inline-block border rounded-xl p-1 border-blue-300 bg-blue-500 bg-opacity-10 text-blue-300"
+            >
+              <Mail width={"100%"} height={"100%"} />
+            </Link>
+            <Link
+              href={""}
+              className="w-10 h-10 inline-block border rounded-xl p-1 border-blue-300 bg-blue-500 bg-opacity-10 text-blue-300"
+            >
               <Instagram width={"100%"} height={"100%"} />
-            </span>
-            <span className="w-10 h-10 inline-block">
+            </Link>
+            <Link
+              href={""}
+              className="w-10 h-10 inline-block border rounded-xl p-1 border-blue-300 bg-blue-500 bg-opacity-10 text-blue-300"
+            >
               <Twitter width={"100%"} height={"100%"} />
-            </span>
+            </Link>
 
-            <span className="w-10 h-10 inline-block">
+            <Link
+              href={""}
+              className="w-10 h-10 inline-block border rounded-xl p-1 border-blue-300 bg-blue-500 bg-opacity-10 text-blue-300"
+            >
               <Facebook width={"100%"} height={"100%"} />
-            </span>
+            </Link>
           </div>
         </div>
 
-        <div className="flex-1 border-2 border-blue-500 border-opacity-50 px-6 lg:px-12 py-10 rounded-3xl bg-blue-500 bg-opacity-10 w-full max-w-[550px]">
+        <div className="flex-1 border-2 border-blue-300 border-opacity-50 px-6 lg:px-12 py-10 rounded-3xl bg-blue-500 bg-opacity-10 w-full max-w-[550px]">
           <p className={`${mauline.className} text-2xl lg:text-3xl mb-8`}>
             Help us improve your experience
           </p>

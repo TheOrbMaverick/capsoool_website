@@ -76,7 +76,7 @@ export default function HamburgerMenu() {
 
       <div
         ref={menuRef}
-        className="absolute w-[85vw] max-w-[400px] hamburger h-[80dvh] bg-white shadow-[0px_0px_20px_rgba(0,0,0,0.1)] -right-full translate-x-[110%] -bottom-6 translate-y-full z[1000000000000000] rounded-3xl p-[24px_1rem_2rem_2.5rem]"
+        className="absolute w-[85vw] max-w-[400px] hamburger h-[80dvh] bg-white shadow-[0px_0px_20px_rgba(0,0,0,0.1)] -right-full translate-x-[110%] -bottom-6 translate-y-full  rounded-3xl p-[24px_1rem_2rem_2.5rem]"
       >
         <div className="h-full flex flex-col items-start">
           <div className="flex flex-col gap-6 hfull">

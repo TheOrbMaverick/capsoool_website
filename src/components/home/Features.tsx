@@ -7,7 +7,10 @@ import BurstPucker from "../abstracts/BurstPucker";
 
 export default function Features() {
   return (
-    <section className="container lg:max-w-[1200px] relative  mx-auto min-h-[100dvh] py-[5rem]">
+    <section
+      id="features"
+      className="container lg:max-w-[1200px] relative  mx-auto min-h-[100dvh] py-[5rem]"
+    >
       <section>
         <div className="px-4">
           <h3

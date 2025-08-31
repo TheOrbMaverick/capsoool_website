@@ -10,6 +10,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useRef } from "react";
 import Image from "next/image";
 import { mauline, poppins } from "@/utils/fonts";
+import TextPlugin from "gsap/TextPlugin";
 // import { maulineLocal, poppins } from "@/constants/fonts";
 
 export default function SetupSection() {
@@ -17,8 +18,9 @@ export default function SetupSection() {
 
   return (
     <section
+      id="setup"
       ref={containerRef}
-      className={`m min-h-[100dvh] 2xl:min-h-[auto] max-h- [56.25rem] font-sans  z-[2] text-bento-purple-dark relative py[3rem] xl: py-[5rem] px-4 md:px-8 2xl:py-[9rem] lg:px-16 2xl:px-32 setup-section bg-blue-500  bg-opacity-5`}
+      className={`m min-h-[100dvh] 2xl:min-h-[auto] max-h- [56.25rem] font-sans  z-[2] text-bento-purple-dark relative py[3rem] xl: py-[5rem] px-4 md:px-8 2xl:py-[9rem] border border-blue-200 lg:px-16 2xl:px-32 setup-section bg-blue-500 max-w-[1200px] mx-auto rounded-3xl  bg-opacity-5`}
     >
       <div>
         <div className="text-center">
@@ -38,38 +40,59 @@ export default function SetupSection() {
         >
           <div className="absolute hidden md:block w-full h-full">
             <div className="w-full h-full flex px[6rem] justify-between items-center z-40">
-              <div className="max-w-[266px] 2xl:max-w-[400px] font-mauline step-title">
-                <h2 className={`header-4 ${mauline.className}`}>
+              <div className="max-w-[306px] 2xl:max-w-[400px] font-mauline step-title">
+                <h2 className={`header-4 mb-3 ${mauline.className}`}>
                   Step <span className="step-step">1</span>
                 </h2>
                 <div
-                  className={`header-2 leading-tight relative ${mauline.className}`}
+                  className={`header-2 leading-[150%] relative ${mauline.className}`}
                 >
                   <div className="setup-header-0">
-                    Create an Account
+                    Download the App and Create an Account
                     <div className="mt-3"></div>
                   </div>
                   <p className="setup-header-1 opacity-0 absolute top-0">
                     Create Your First Capsoool
                   </p>
                   <p className="setup-header-2 opacity-0 absolute top-0">
-                    Add Recipients
+                    Securely Store Your Capsoools
+                  </p>
+                  <p className="setup-header-3 opacity-0 absolute top-0">
+                    Add People you Trust to your list of Trusted Persons.
                   </p>
                 </div>
               </div>
 
-              <div className="max-w-[296px] text-shadow  2xl:max-w-[420px] b2-regular relative font-sans">
+              <div className="max-w-[296px] text-shadow  xl:max-w-[360px] leading-[200%] b2-regular relative font-sans">
                 <div
-                  className={`absolute step-content step-2 top-0 left-0 opacity-0 ${poppins.className}`}
+                  className={`absolute step-content step-3 top-0 left-0 opacity-0 ${poppins.className}`}
                 >
                   <p className="">
-                    Choose who each Capsoool will be delivered to.
+                    Trusted Persons: Individuals you{" "}
+                    <span className="text-blue-500 font-semibold">Trust</span>{" "}
+                    to deliver your Preserved Memories to the Specified
+                    Recipients
                   </p>
                   <br />
                   {/* <br /> */}
                   <p className="">
-                    Family, friends, or loved ones — only you decide who
-                    receives it.
+                    Persons you trust to uphold the Confidentiality of the
+                    Documents.
+                  </p>
+                </div>
+                <div
+                  className={`absolute step-content step-2 top-0 left-0 opacity-0 ${poppins.className}`}
+                >
+                  <p className="">
+                    Securely Store each Capsool you create within a
+                    privately-secured database which is protected by your
+                    credentials
+                  </p>
+                  <br />
+                  {/* <br /> */}
+                  <p className="">
+                    Easily Store a newly created Capsoool by Submiting the
+                    Create Capsoool Form.
                   </p>
                 </div>
 
@@ -77,14 +100,14 @@ export default function SetupSection() {
                   className={`absolute top-0 step-content step-1 left-0 opacity-0 ${poppins.className}`}
                 >
                   <p className="">
-                    Write a message, add photos, record a video, or upload
-                    documents.
+                    Easily navigate to the &ldquo;Create Capsoool&rdquo; tab to
+                    add a new Capsool
                   </p>
                   <br />
                   {/* <br /> */}
                   <p className="">
-                    Each Capsoool is your personal memory capsule — unique and
-                    timeless.
+                    Each Capsoool offers you the flexbility to save your
+                    memories in various digital formats.
                   </p>
                 </div>
 
@@ -92,44 +115,47 @@ export default function SetupSection() {
                   className={`step-content step-0 opacity0 ${poppins.className}`}
                 >
                   <p className="">
-                    Sign up in seconds and set up your profile.
+                    Easily Download the App from Play Store or App Store
                   </p>
                   <br />
-                  {/* <br /> */}
                   <p className="">
-                    This is your secure space for preserving memories and
-                    messages.
+                    Create an Account by filling out some basic details.
                   </p>
                 </div>
               </div>
             </div>
           </div>
           <div className="relative flex items-center mt-10 md:mt-0 md:gap-8">
-            <div className="text-[80px] cursor-pointer prev w-9 h-9 md:w-14 md:h-14 flex justify-center items-center bg-blue-500 bg-opacity-10 border border-blue-300 rounded-full shadow-md">
+            <div className="lg:hidden text-[80px] cursor-pointer prev w-9 h-9 md:w-14 md:h-14 flex justify-center items-center bg-blue-500 bg-opacity-10 border border-blue-300 rounded-full shadow-md">
               <div className="w-7 h-7 md:w-10 md:h-10 text-blue-500">
                 <ChevronLeft width={"100%"} height={"100%"} />
               </div>
             </div>
 
-            <div className=" max-w-[255px] md:max-w-full">
-              <div className="max-w[266px] text-center md:hidden font-mauline step-title">
+            <div className=" max-w-[320px] md:max-w-full">
+              <div className="max-w[266px]  w-full text-center md:hidden mb4 font-mauline step-title">
                 <h2 className={`header-5 mb-2 ${mauline.className}`}>
                   Step <span className="step-step">1</span>:
                 </h2>
                 <div
                   className={`header-4 text-center leading-tight relative ${mauline.className}`}
                 >
-                  <p className="setup-header-0 ">Create an Account</p>
+                  <p className="setup-header-0 ">
+                    Download the App and Create an Account
+                  </p>
                   <p className="setup-header-1 opacity-0  w-full absolute top-0">
                     Create Your First Capsoool
                   </p>
                   <p className="setup-header-2 opacity-0 w-full absolute top-0">
-                    Add Recipients
+                    Securely Store Your Capsoools
+                  </p>
+                  <p className="setup-header-3 opacity-0 w-full absolute top-0">
+                    Add People you Trust to your list of Trusted Persons.
                   </p>
                 </div>
               </div>
-              <div className="w-[247px]  md:w-[21.9375rem] h-[456px] relative mx-auto   md:h-[40.4375rem]  flex justify-center items-center overflow-hidden">
-                <div className="absolute  w-[210px] h-[420px] md:w-[290px]   md:h-[590px] ">
+              <div className="w-[250px]   md:w-[21.9375rem] h-[500px] relative mx-auto   md:h-[40.4375rem]  flex justify-center items-center overflow-hidden">
+                <div className="absolute  w-[250px] h-[500px]  md:w-[290px]   md:h-[590px] ">
                   <div
                     className="w-full h-full"
                     // style={{ borderWidth: 4, borderColor: "red" }}
@@ -153,7 +179,7 @@ export default function SetupSection() {
                       }}
                       slidesPerView={1}
                       onSlideChange={(e) => {
-                        console.log(e.activeIndex);
+                        gsap.registerPlugin(TextPlugin);
                         gsap.to(".step-step", {
                           text: `${e.activeIndex + 1}`,
                         });
@@ -161,9 +187,11 @@ export default function SetupSection() {
                           gsap.to(".step-0", { opacity: 1 });
                           gsap.to(".step-1", { opacity: 0 });
                           gsap.to(".step-2", { opacity: 0 });
+                          gsap.to(".step-3", { opacity: 0 });
                           gsap.to(".setup-header-0", { opacity: 1 });
                           gsap.to(".setup-header-1", { opacity: 0 });
                           gsap.to(".setup-header-2", { opacity: 0 });
+                          gsap.to(".setup-header-3", { opacity: 0 });
                           // gsap.to(containerRef.current, {
                           //   backgroundColor: bgColors[0],
                           // });
@@ -174,9 +202,11 @@ export default function SetupSection() {
                           gsap.to(".step-0", { opacity: 0 });
                           gsap.to(".step-1", { opacity: 1 });
                           gsap.to(".step-2", { opacity: 0 });
+                          gsap.to(".step-3", { opacity: 0 });
                           gsap.to(".setup-header-0", { opacity: 0 });
                           gsap.to(".setup-header-1", { opacity: 1 });
                           gsap.to(".setup-header-2", { opacity: 0 });
+                          gsap.to(".setup-header-3", { opacity: 0 });
                           // gsap.to(containerRef.current, {
                           //   backgroundColor: bgColors[1],
                           // });
@@ -187,13 +217,21 @@ export default function SetupSection() {
                           gsap.to(".step-0", { opacity: 0 });
                           gsap.to(".step-1", { opacity: 0 });
                           gsap.to(".step-2", { opacity: 1 });
+                          gsap.to(".step-3", { opacity: 0 });
                           gsap.to(".setup-header-0", { opacity: 0 });
                           gsap.to(".setup-header-1", { opacity: 0 });
                           gsap.to(".setup-header-2", { opacity: 1 });
-                          // gsap.to(containerRef.current, {
-                          //   backgroundColor: bgColors[2],
-                          // });
-                          // gsap.to(containerRef.current, { color: "#163600" });
+                          gsap.to(".setup-header-3", { opacity: 0 });
+                        }
+                        if (e.activeIndex === 3) {
+                          gsap.to(".step-0", { opacity: 0 });
+                          gsap.to(".step-1", { opacity: 0 });
+                          gsap.to(".step-2", { opacity: 0 });
+                          gsap.to(".step-3", { opacity: 1 });
+                          gsap.to(".setup-header-0", { opacity: 0 });
+                          gsap.to(".setup-header-1", { opacity: 0 });
+                          gsap.to(".setup-header-2", { opacity: 0 });
+                          gsap.to(".setup-header-3", { opacity: 1 });
                         }
 
                         if (e.activeIndex == 2) {
@@ -211,7 +249,7 @@ export default function SetupSection() {
                     >
                       <SwiperSlide style={{ height: 500 }}>
                         <Image
-                          src={"/images/security-phone-mockup.png"}
+                          src={"/images/signup-mockup.png"}
                           width={"1000"}
                           height={"1000"}
                           alt="Secure"
@@ -219,7 +257,15 @@ export default function SetupSection() {
                       </SwiperSlide>
                       <SwiperSlide style={{ height: 500 }}>
                         <Image
-                          src={"/images/home-phone-mockup.png"}
+                          src={"/images/create-mockup.png"}
+                          width={"1000"}
+                          height={"1000"}
+                          alt="Secure"
+                        />
+                      </SwiperSlide>
+                      <SwiperSlide style={{ height: 500 }}>
+                        <Image
+                          src={"/images/security-phone-mockup.png"}
                           width={"1000"}
                           height={"1000"}
                           alt="Secure"
@@ -237,9 +283,22 @@ export default function SetupSection() {
                   </div>
                 </div>
               </div>
+
+              <div className="hidden lg:flex justify-between">
+                <div className="text-[80px] cursor-pointer prev w-9 h-9 md:w-14 md:h-14 flex justify-center items-center bg-blue-500 bg-opacity-10 border border-blue-300 rounded-full shadow-md">
+                  <div className="w-7 h-7 md:w-10 md:h-10 text-blue-500">
+                    <ChevronLeft width={"100%"} height={"100%"} />
+                  </div>
+                </div>
+                <div className="text-[80px] next cursor-pointer w-9 h-9 md:w-14 md:h-14 flex justify-center items-center bg-blue-500 bg-opacity-10 border border-blue-300 rounded-full shadow-md">
+                  <div className="w-7 h-7 md:w-10 md:h-10 text-blue-500">
+                    <ChevronRight width={"100%"} height={"100%"} />
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <div className="text-[80px] next cursor-pointer w-9 h-9 md:w-14 md:h-14 flex justify-center items-center bg-blue-500 bg-opacity-10 border border-blue-300 rounded-full shadow-md">
+            <div className="lg:hidden text-[80px] next cursor-pointer w-9 h-9 md:w-14 md:h-14 flex justify-center items-center bg-blue-500 bg-opacity-10 border border-blue-300 rounded-full shadow-md">
               <div className="w-7 h-7 md:w-10 md:h-10 text-blue-500">
                 <ChevronRight width={"100%"} height={"100%"} />
               </div>
@@ -248,32 +307,51 @@ export default function SetupSection() {
         </div>
         <div className="w-full max-w-[360px] mx-auto mt-4 text-center md:hidden md:text-[18px] relative font-sans">
           <div className="absolute step-content step-2 top-0 left-0 opacity-0">
-            <p className="">Choose who each Capsoool will be delivered to.</p>
+            <p className="">
+              Securely Store each Capsool you create within a privately-secured
+              database which is protected by your credentials
+            </p>
             <br />
             {/* <br /> */}
             <p className="">
-              Family, friends, or loved ones — only you decide who receives it.
+              Easily Store a newly created Capsoool by Submiting the Create
+              Capsoool Form.
             </p>
           </div>
 
           <div className="absolute top-0 step-content step-1 left-0 opacity-0">
             <p className="">
-              Write a message, add photos, record a video, or upload documents.
+              Easily navigate to the &ldquoCreate Capsoool&rdquo; tab to add a
+              new Capsool
             </p>
             <br />
             {/* <br /> */}
             <p className="">
-              Each Capsoool is your personal memory capsule — unique and
-              timeless.
+              Each Capsoool offers you the flexbility to save your memories in
+              various digital formats.
+            </p>
+          </div>
+
+          <div className="absolute step-content step-3 opacity-0">
+            <p className="">
+              Trusted Persons: Individuals you{" "}
+              <span className="text-blue-500 font-semibold">Trust</span> to
+              deliver your Preserved Memories to the Specified Recipients
+            </p>
+            <br />
+            {/* <br /> */}
+            <p className="">
+              Persons you trust to uphold the Confidentiality of the Documents.
             </p>
           </div>
 
           <div className="step-content step-0 opacity0">
-            <p className="">Sign up in seconds and set up your profile.</p>
-            <br />
-            {/* <br /> */}
             <p className="">
-              This is your secure space for preserving memories and messages.
+              Easily Download the App from Play Store or App Store
+            </p>
+            <br />
+            <p className="">
+              Create an Account by filling out some basic details.
             </p>
           </div>
         </div>

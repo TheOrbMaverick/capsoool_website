@@ -5,7 +5,7 @@ import Accordion from "../Accordion";
 
 export default function FAQs() {
   return (
-    <section className="container mx-auto py-[5rem]">
+    <section id="faqs" className="container mx-auto py-[5rem]">
       <div
         className={`${mauline.className} text-[2.5rem] lg:text-[80px] leading-none text-center`}
       >

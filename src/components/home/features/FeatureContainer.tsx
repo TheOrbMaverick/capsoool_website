@@ -16,7 +16,7 @@ export default function FeatureContainer({
         index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
       }`}
     >
-      <div className="flex-1  w-full">
+      <div className={`flex-1  w-full `}>
         <h3
           className={`${mauline.className} text-3xl w-full  leading-none mb-4 `}
         >
