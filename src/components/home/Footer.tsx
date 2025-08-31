@@ -61,11 +61,15 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="col-start-10 col-end-13">
+          <div className="col-start-1 col-end-6 md:col-start-10 md:col-end-13">
             <div className="">
-              <p className={`${mauline.className} mb-5 text-xl`}>Our Socials</p>
+              <p
+                className={`${mauline.className} hidden md:block mb-5 text-xl`}
+              >
+                Our Socials
+              </p>
 
-              <div className=" mt-4 flex flex-col items-center lg:grid lg:grid-cols-2 gap-2">
+              <div className=" mt-4 flex items-center lg:grid lg:grid-cols-2 gap-2">
                 <Link
                   href={"mailto:support@capsoool.com"}
                   className="w-10 h-10 inline-block border rounded-xl p-1 border-blue-300 bg-blue-500 bg-opacity-10 text-blue-300"
