@@ -3,29 +3,19 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import CTAButton from "./CTAButton";
-import { poppins } from "@/utils/fonts";
 import HamburgerMenu from "./Hamburger";
 
 export default function Header() {
   return (
-    <>
+    <div className="">
       <header className="px-[5rem] hidden  py-2 lg:flex items-center justify-between">
         <Link href={"/"} className="flex items-center">
-          <h1
-            className={`flex items-center text-3xl font-semibold ${poppins.className}`}
-          >
-            Caps
-            <span>
-              {" "}
-              <Image
-                src={"/images/capsoool_stroke_logo.png"}
-                width={50}
-                height={100}
-                alt="Capsoool Logo"
-              />
-            </span>
-            l
-          </h1>
+          <Image
+            src={"/images/logo.png"}
+            width={200}
+            height={100}
+            alt="Capsoool Logo"
+          />
         </Link>
 
         <div className="flex items-center gap-12">
@@ -48,26 +38,17 @@ export default function Header() {
         </div>
       </header>
 
-      <header className="px-[1rem]  py-2 flex lg:hidden items-center justify-between relative overflow-x-clip">
+      <header className="px-[1rem]  py-4 flex lg:hidden items-center justify-between relative overflow-x-clip">
         <Link href={"/"} className="flex items-center">
-          <h1
-            className={`flex items-center text-3xl font-semibold ${poppins.className}`}
-          >
-            Caps
-            <span>
-              {" "}
-              <Image
-                src={"/images/capsoool_stroke_logo.png"}
-                width={50}
-                height={100}
-                alt="Capsoool Logo"
-              />
-            </span>
-            l
-          </h1>
+          <Image
+            src={"/images/logo.png"}
+            width={120}
+            height={100}
+            alt="Capsoool Logo"
+          />
         </Link>
         <HamburgerMenu />
       </header>
-    </>
+    </div>
   );
 }

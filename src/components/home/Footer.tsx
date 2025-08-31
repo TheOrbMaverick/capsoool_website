@@ -2,16 +2,25 @@ import { mauline } from "@/utils/fonts";
 import { Instagram, Mail, Twitter } from "lucide-react";
 import Link from "next/link";
 import React from "react";
+import Image from "next/image";
 
 export default function Footer() {
   return (
     <section className="px-4 lg:px-12 py-12">
       <div className="py-[4rem]  px-4 lg:px-20 lg:max-w-[1200px] mx-auto rounded-3xl lg:rounded-[2.5rem] border border-blue-300 bg-blue-500 bg-opacity-10">
         <div className="lg:flex gap-y-6 grid grid-cols-12 justify-between">
-          <div className="col-start-1 col-end-13">
-            <h2 className={`text-3xl ${mauline.className} text-blue500`}>
-              Capsoool
-            </h2>
+          <div className="col-start-1 col-end-13 ">
+            <div className="">
+              <Link href={"/"} className="">
+                <Image
+                  src={"/images/logo.png"}
+                  width={200}
+                  height={10}
+                  alt="Capsoool Logo"
+                  className=""
+                />
+              </Link>
+            </div>
             <p className="lg:max-w-[200px] mt-3">
               A Platform to Preserve you Most Precious Memories with{" "}
               <span className={`${mauline.className} text-blue-500 text-xl`}>

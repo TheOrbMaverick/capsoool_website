@@ -1,11 +1,9 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-// import { LogIn } from "lucide-react";
 import gsap from "gsap";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { mauline } from "@/utils/fonts";
-// import { SignUpButton } from "./buttons";
+import Image from "next/image";
 
 export default function HamburgerMenu() {
   const location = usePathname();
@@ -76,22 +74,25 @@ export default function HamburgerMenu() {
 
       <div
         ref={menuRef}
-        className="absolute w-[85vw] max-w-[400px] hamburger h-[80dvh] bg-white shadow-[0px_0px_20px_rgba(0,0,0,0.1)] -right-full translate-x-[110%] -bottom-6 translate-y-full  rounded-3xl p-[24px_1rem_2rem_2.5rem]"
+        className="absolute w-[85vw] max-w-[400px] hamburger h-[80dvh] bg-background shadow-[0px_0px_20px_rgba(255,255,255,0.1)] -right-full translate-x-[110%] -bottom-6 translate-y-full  rounded-3xl p-[24px_1rem_2rem_2.5rem] border border-blue-300/50"
       >
         <div className="h-full flex flex-col items-start">
           <div className="flex flex-col gap-6">
             <Link href={"/"}>
-              <h2 className={`${mauline.className} text-[2rem] text-blue-500`}>
-                Capsoool
-              </h2>
+              <Image
+                src={"/images/logo.png"}
+                width={200}
+                height={100}
+                alt="Capsoool Logo"
+              />
             </Link>
             <div className="">
-              <nav className="flex flex-col text-[#222] gap-[10px]">
+              <nav className="flex flex-col justify-start items-start text-white gap-[10px]">
                 {["Features", "Pricing", "Contact Us"].map((item, i) => (
                   <Link
                     href={`/#${item.split(" ").join("-").toLowerCase()}`}
                     key={i}
-                    className="p-[10px] hover:bg-gray-200 rounded-full"
+                    className="p-[10px] px-4 hover:bg-white/10 rounded-full"
                     onClick={() => {
                       slideOutRef.current?.restart();
                       setMenuOpen(false);
@@ -104,13 +105,12 @@ export default function HamburgerMenu() {
             </div>
           </div>
 
-          <Link
+          {/* <Link
             href={"/contact"}
             className="inline-flex relative px-4 rounded-lg py-4 gap-2 items-center font-bold text-white bg-primary hover:bg-button-hover active:bg-button-pressed  mt-auto"
           >
-            {/* <LogIn className="stroke-primary" /> */}
             Request a Demo
-          </Link>
+          </Link> */}
         </div>
       </div>
     </div>
