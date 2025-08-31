@@ -4,7 +4,7 @@ import React from "react";
 
 export default function Pricing() {
   return (
-    <section className="">
+    <section id="pricing" className="">
       <section className="max-w-[1200px] mx-auto py-[4rem] lg:py-[9rem] px-4">
         <div className="mb-16">
           <h3
