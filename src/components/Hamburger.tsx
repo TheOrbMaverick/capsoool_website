@@ -25,7 +25,7 @@ export default function HamburgerMenu() {
         ease: "power2.out",
       });
       slideOutRef.current = gsap.to(menuRef.current, {
-        x: "110%",
+        x: "120%",
         right: "100%",
         paused: true,
         duration: 0.5,
@@ -79,21 +79,11 @@ export default function HamburgerMenu() {
         className="absolute w-[85vw] max-w-[400px] hamburger h-[80dvh] bg-white shadow-[0px_0px_20px_rgba(0,0,0,0.1)] -right-full translate-x-[110%] -bottom-6 translate-y-full  rounded-3xl p-[24px_1rem_2rem_2.5rem]"
       >
         <div className="h-full flex flex-col items-start">
-          <div className="flex flex-col gap-6 hfull">
+          <div className="flex flex-col gap-6">
             <Link href={"/"}>
               <h2 className={`${mauline.className} text-[2rem] text-blue-500`}>
                 Capsoool
               </h2>
-              {/* <div className="flex items-center gap-2 xl:gap-4">
-                <img
-                  src="/images/logo.png"
-                  alt="Logo"
-                  className="xl:w-16 xl:h-16 w-6 h-6 object-cover"
-                />
-                <span className="font-extrabold text-[18px] md:text-[1.5rem] leading-none xl:text-[2rem] bg-gradient-to-r from-primary to-[#FFBA3C] bg-clip-text text-transparent">
-                  GatherGram
-                </span>
-              </div> */}
             </Link>
             <div className="">
               <nav className="flex flex-col text-[#222] gap-[10px]">

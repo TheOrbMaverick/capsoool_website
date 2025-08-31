@@ -1,9 +1,36 @@
+"use client";
 import { mauline } from "@/utils/fonts";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { Instagram, Mail, Twitter } from "lucide-react";
 import Link from "next/link";
 import React from "react";
+import { useForm } from "react-hook-form";
+import z from "zod";
+
+const formSchema = z.object({
+  name: z.string().nullable(),
+  email: z.email({ error: "Enter a valid Email Address" }),
+  message: z.string().min(2, { error: "Provide message content to send" }),
+});
 
 export default function Contact() {
+  const {
+    handleSubmit,
+    control,
+    register,
+    formState: { errors },
+  } = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      message: "",
+    },
+  });
+
+  async function submitMessage(values: z.infer<typeof formSchema>) {
+    console.log(values);
+  }
   return (
     <section
       id="contact-us"
@@ -53,36 +80,51 @@ export default function Contact() {
           <p className={`${mauline.className} text-2xl lg:text-3xl mb-8`}>
             Help us improve your experience
           </p>
-          <div className="space-y-5">
-            <div className="space-y-1">
-              <p className="text-lg font-medium">Name</p>
-              <input
-                type="text"
-                placeholder="Name"
-                className="bg-transparent px-4 border-2 border-gray-500 w-full h-14 rounded-xl "
-              />
-            </div>
-            <div className="space-y-1">
-              <p className="text-lg font-medium">Email</p>
-              <input
-                type="email"
-                placeholder="Email"
-                className="bg-transparent px-4 border-2 border-gray-500 w-full h-14 rounded-xl "
-              />
-            </div>
+          <form onSubmit={handleSubmit(submitMessage)}>
+            <div className="space-y-5">
+              <div className="space-y-1">
+                <p className="text-lg font-medium">Name</p>
+                <input
+                  type="text"
+                  placeholder="Name"
+                  className="bg-transparent px-4 border-2 border-gray-500 w-full h-14 rounded-xl "
+                  {...register("name")}
+                />
+                <p>{errors.name?.message}</p>
+              </div>
+              <div className="space-y-1">
+                <p className="text-lg font-medium">Email</p>
+                <input
+                  type="email"
+                  placeholder="Email"
+                  className="bg-transparent px-4 border-2 border-gray-500 w-full h-14 rounded-xl "
+                  {...register("email")}
+                />
+                <p className="text-red-400 text-sm lg:text-base">
+                  {errors.email?.message}
+                </p>
+              </div>
 
-            <div className="space-y-1">
-              <p className="text-lg font-medium">Message</p>
-              <textarea
-                placeholder="Enter your message"
-                className="bg-transparent px-4 py-2 border-2 border-gray-500 w-full min-h-40 rounded-xl "
-              />
-            </div>
+              <div className="space-y-1">
+                <p className="text-lg font-medium">Message</p>
+                <textarea
+                  placeholder="Enter your message"
+                  className="bg-transparent px-4 py-2 border-2 border-gray-500 w-full min-h-40 rounded-xl "
+                  {...register("message")}
+                />
+                <p className="text-red-400 text-sm lg:text-base">
+                  {errors.message?.message}
+                </p>
+              </div>
 
-            <button className="bg-blue-500 px-4 py-3 rounded-lg font-semibold w-full">
-              Submit
-            </button>
-          </div>
+              <button
+                type="submit"
+                className="bg-blue-500 px-4 py-3 rounded-lg font-semibold w-full"
+              >
+                Submit
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </section>

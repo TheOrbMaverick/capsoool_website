@@ -12,7 +12,7 @@ const Home: React.FC = () => {
     <div className="min-h-[100dvh]">
       <Hero />
       <Features />
-      <Pricing/>
+      <Pricing />
       <Setup />
       <FAQs />
       <Contact />

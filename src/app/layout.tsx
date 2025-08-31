@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import "./globals.css";
 import Header from "@/components/Header";
 import { poppins } from "@/utils/fonts";
 import Footer from "@/components/Footer";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Capsoool App",
@@ -19,9 +19,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.className} antialiased ovehidden`}>
+      <body className={`${poppins.className} antialiased w-[100vw] `}>
         <Header />
-        <div className="min-h-[90dvh]">{children}</div>
+        {children}
         <Footer />
       </body>
     </html>
