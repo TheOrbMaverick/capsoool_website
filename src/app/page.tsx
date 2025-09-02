@@ -6,10 +6,12 @@ import Footer from "@/components/home/Footer";
 import Hero from "@/components/home/Hero";
 import Pricing from "@/components/home/Pricing";
 import Setup from "@/components/home/Setup";
+import ReactLenis from "lenis/react";
 
 const Home: React.FC = () => {
   return (
     <div className="min-h-[100dvh]">
+      <ReactLenis options={{}} root />
       <Hero />
       <Features />
       <Pricing />

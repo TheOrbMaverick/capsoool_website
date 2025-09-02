@@ -41,7 +41,7 @@ export default function SetupSection() {
           >
             <div className="absolute hidden md:block w-full h-full">
               <div className="w-full h-full flex px[6rem] justify-between items-center z-40">
-                <div className="max-w-[306px] 2xl:max-w-[400px] font-mauline step-title">
+                <div className="max-w-[260px] 2xl:max-w[400px] font-mauline step-title">
                   <h2 className={`header-4 mb-3 ${mauline.className}`}>
                     Step <span className="step-step">1</span>
                   </h2>
@@ -64,7 +64,7 @@ export default function SetupSection() {
                   </div>
                 </div>
 
-                <div className="max-w-[296px] text-shadow  xl:max-w-[360px] leading-[200%] b2-regular relative font-sans">
+                <div className="max-w-[270px] text-shadow  xl:max-w[360px] leading-[200%] b2-regular relative font-sans">
                   <div
                     className={`absolute step-content step-3 top-0 left-0 opacity-0 ${poppins.className}`}
                   >

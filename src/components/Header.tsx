@@ -7,8 +7,8 @@ import HamburgerMenu from "./Hamburger";
 
 export default function Header() {
   return (
-    <div className="">
-      <header className="px-[5rem] hidden  py-2 lg:flex items-center justify-between">
+    <div className="max-w-[1200px] mx-auto py-8">
+      <header className="px[5rem] hidden lg:flex items-center justify-between">
         <Link href={"/"} className="flex items-center">
           <Image
             src={"/images/logo.png"}

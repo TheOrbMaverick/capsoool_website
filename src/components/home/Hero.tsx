@@ -1,18 +1,39 @@
-import React from "react";
+"use client";
+import React, { useRef } from "react";
 import AndroidButton from "../AndroidButton";
 import IOSButton from "../IOSButton";
 import { mauline } from "@/utils/fonts";
 import Image from "next/image";
 import Future from "../abstracts/Future";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 export default function Hero() {
+  const futurePortalRef = useRef<HTMLDivElement>(null);
+  const heroIntroHeaderRef = useRef<HTMLSpanElement>(null);
+  useGSAP(() => {
+    // gsap.from(futurePortalRef.current, {
+    //   scale: 0.5,
+    //   rotate: 180,
+    //   duration: 1,
+    //   delay: 1.5,
+    // });
+    gsap.from(heroIntroHeaderRef.current, {
+      y: "100%",
+      duration: 1,
+      opacity: 0,
+    });
+    gsap.from(".intro-desc", { y: "100%", stagger: 0.5, delay: 0.8 });
+  }, []);
   return (
     <section className="overflow-x-hidden">
       <div className="absolute -z-[2] w-full left-0 text-white text-opacity-5 overflow-x-hidden lg:left-[25%]">
-        <Future
-          className="stroke-blue-300/10 scale"
-          stroke="rgb(147 197 253 / 0.1)"
-        />
+        <div ref={futurePortalRef} className="inline-block">
+          <Future
+            className="stroke-blue-300/10 scale"
+            stroke="rgb(147 197 253 / 0.1)"
+          />
+        </div>
       </div>
       <div className="absolute top-[30%] w-80 h-80 bg-blue-500 bg-opacity-20 -z-[3] rounded-full"></div>
       <div className="absolute bottom-[10%] right-[30%] w-80 h-80 bg-blue-500 bg-opacity-30 -z-[3] rounded-full"></div>
@@ -25,22 +46,28 @@ export default function Hero() {
             in one app
           </p> */}
             <p
-              className={`text-[2.5rem] lg:text-[80px]  leading-none ${mauline.className}`}
+              className={`text-[2.5rem] relative overflow-y-clip  lg:text-[80px]  leading-none ${mauline.className}`}
             >
-              Preserve Your <span className="text-blue-500">Memories</span>.
+              <span ref={heroIntroHeaderRef} className="inline-block relative">
+                Preserve Your <span className="text-blue-500">Memories</span>.
+              </span>
               {/* Protect Your Legacy. */}
             </p>
             <div className="max-w-[500px] space-y-2 ">
-              <p className="">
-                We don’t know what the future holds — but with Capsoools, you
-                can leave behind comfort, love, and guidance that lasts a
-                lifetime. Your words and memories will live on, even when you
-                can’t be there.
+              <p className="relative overflow-hidden">
+                <span className="intro-desc inline-block">
+                  We don’t know what the future holds — but with Capsoools, you
+                  can leave behind comfort, love, and guidance that lasts a
+                  lifetime. Your words and memories will live on, even when you
+                  can’t be there.
+                </span>
               </p>
-              <p className="hidden lg:block">
-                Capsoools is a safe space to store your most meaningful
-                messages, memories, and moments — to be delivered to your loved
-                ones when it matters most.
+              <p className="hidden lg:block relative overflow-hidden">
+                <span className="intro-desc inline-block">
+                  Capsoools is a safe space to store your most meaningful
+                  messages, memories, and moments — to be delivered to your
+                  loved ones when it matters most.
+                </span>
               </p>
             </div>
           </div>
