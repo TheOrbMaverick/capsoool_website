@@ -35,7 +35,7 @@ export default function Contact() {
     },
   });
 
-  async function onCaptchaChange(value: string) {
+  async function onCaptchaChange(value: string | null) {
     try {
       const { data } = await axios.post("/api/verify-captcha", {
         response: value,
@@ -161,7 +161,7 @@ export default function Contact() {
                 <div className="">
                   <ReCAPTCHA
                     ref={captchaRef}
-                    sitekey={"6LcjSL4rAAAAALYU4sCCKyumHuDno4Z8Xws5ryma"}
+                    sitekey={process.env.NEXT_PUBLIC_GOOGLE_CAPTCHA_SITE_KEY!}
                     onChange={onCaptchaChange}
                   />
                   <p className="text-red-500 text-sm">
