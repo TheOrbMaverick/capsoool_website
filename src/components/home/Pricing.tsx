@@ -18,9 +18,9 @@ export default function Pricing() {
           </p>
         </div>
         <div className="">
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="grid lg:grid-cols-3 items-stretch gap-8">
             <div className="relative">
-              <div className="border4 rounded-[2rem] bg-white bg-opacity-20 border-l border-b bg-gradient-tobr tobackground fromblue-500/30 shadow-[-8px_8px_8px_rgba(59,130,246,0.1)]    h[700px] bg-opacity50  px-6 py-8 relative overflow-hidden">
+              <div className="border4 h-full flex flex-col rounded-[2rem] bg-white bg-opacity-20 border-l border-b bg-gradient-tobr tobackground fromblue-500/30 shadow-[-8px_8px_8px_rgba(59,130,246,0.1)]    h[700px] bg-opacity50  px-6 py-8 relative overflow-hidden">
                 <div className="">
                   <div className="flex justify-between items-center mb-4">
                     <h4 className={`${mauline.className} text-[2rem]`}>
@@ -45,13 +45,13 @@ export default function Pricing() {
                   </ul>
                 </div>
 
-                <div className="mt-6">
+                <div className="mt-auto">
                   <p>{plans.basic.summary}</p>
                 </div>
               </div>
             </div>
             <div className="relative">
-              <div className="border4 rounded-[2rem] bg-gradient-to-br to-background from-blue-500/30 shadow-[8px_8px_8px_rgba(59,130,246,0.2)]  outline-blue-300 outlin outline-2  h[700px] bg-opacity-50  px-6 py-8 relative overflow-hidden">
+              <div className="border4 h-full flex flex-col rounded-[2rem] bg-gradient-to-br to-background from-blue-500/30 shadow-[8px_8px_8px_rgba(59,130,246,0.2)]  outline-blue-300 outlin outline-2  h[700px] bg-opacity-50  px-6 py-8 relative overflow-hidden">
                 <div className="absolute w-full h-full top-0 left-0 bg-ed-500 -z-[1] backdrop-blur-2xl"></div>
                 <div className="absolute w-full h-full top-0 left-0 bg-red-500/20 scale-[80%] -z-[2]"></div>
                 <div className="w-40 h-40 rounded-bl-full bg-blue-500/50 -z-[2] absolute"></div>
@@ -87,7 +87,7 @@ export default function Pricing() {
                   </ul>
                 </div>
 
-                <div className="mt-6">
+                <div className="mt-auto">
                   <p>{plans.standard.summary}</p>
                 </div>
               </div>

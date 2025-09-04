@@ -3,10 +3,12 @@ import { mauline } from "@/utils/fonts";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Instagram, Mail, Twitter } from "lucide-react";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import z from "zod";
 import emailjs from "@emailjs/browser";
+import ReCAPTCHA from "react-google-recaptcha";
+import axios from "axios";
 
 emailjs.init({ publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY! });
 
@@ -18,6 +20,8 @@ const formSchema = z.object({
 
 export default function Contact() {
   const [submitting, setSubmitting] = useState<boolean>(false);
+  const [isCaptchaVerified, setIsCaptchaVerified] = useState<boolean>(false);
+  const captchaRef = useRef<ReCAPTCHA>(null);
   const {
     handleSubmit,
     register,
@@ -30,6 +34,22 @@ export default function Contact() {
       message: "",
     },
   });
+
+  async function onCaptchaChange(value: string) {
+    try {
+      const { data } = await axios.post("/api/verify-captcha", {
+        response: value,
+      });
+      console.log("Response data", data);
+      if (data.success) {
+        setIsCaptchaVerified(true);
+      } else {
+        captchaRef.current?.reset();
+      }
+    } catch (error) {
+      console.log("Error Occured", error);
+    }
+  }
 
   async function submitMessage(values: z.infer<typeof formSchema>) {
     setSubmitting(true);
@@ -137,10 +157,23 @@ export default function Contact() {
                 </p>
               </div>
 
+              {!isCaptchaVerified && (
+                <div className="">
+                  <ReCAPTCHA
+                    ref={captchaRef}
+                    sitekey={"6LcjSL4rAAAAALYU4sCCKyumHuDno4Z8Xws5ryma"}
+                    onChange={onCaptchaChange}
+                  />
+                  <p className="text-red-500 text-sm">
+                    Verify Captcha to continue
+                  </p>
+                </div>
+              )}
+
               <button
                 type="submit"
-                disabled={submitting}
-                className="bg-blue-500 disabled:bg-blue-300/70 px-4 py-3 rounded-lg font-semibold w-full"
+                disabled={submitting || !isCaptchaVerified}
+                className="bg-blue-500 disabled:bg-blue-300/70 px-4 py-3 disabled:cursor-not-allowed rounded-lg font-semibold w-full"
               >
                 {!submitting ? "Submit" : "Submitting..."}
               </button>

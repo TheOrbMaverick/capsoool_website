@@ -7,23 +7,29 @@ import Image from "next/image";
 import Future from "../abstracts/Future";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { SplitText } from "gsap/SplitText";
 
 export default function Hero() {
   const futurePortalRef = useRef<HTMLDivElement>(null);
   const heroIntroHeaderRef = useRef<HTMLSpanElement>(null);
+  const introDescRef = useRef<HTMLDivElement>(null);
   useGSAP(() => {
-    // gsap.from(futurePortalRef.current, {
-    //   scale: 0.5,
-    //   rotate: 180,
-    //   duration: 1,
-    //   delay: 1.5,
-    // });
+    gsap.registerPlugin(SplitText);
+
+    const introSplit = SplitText.create(introDescRef.current, {
+      type: "words",
+    });
     gsap.from(heroIntroHeaderRef.current, {
       y: "100%",
       duration: 1,
       opacity: 0,
     });
-    gsap.from(".intro-desc", { y: "100%", stagger: 0.5, delay: 0.8 });
+    gsap.from(introSplit.words, {
+      stagger: 0.03,
+      opacity: 0,
+      y: 40,
+    });
+    // gsap.from(".intro-desc", { y: "100%", stagger: 0.5, delay: 0.8 });
   }, []);
   return (
     <section className="overflow-x-hidden">
@@ -53,7 +59,7 @@ export default function Hero() {
               </span>
               {/* Protect Your Legacy. */}
             </p>
-            <div className="max-w-[500px] space-y-2 ">
+            <div ref={introDescRef} className="max-w-[500px] space-y-2 ">
               <p className="relative overflow-hidden">
                 <span className="intro-desc inline-block">
                   We don’t know what the future holds — but with Capsoools, you
