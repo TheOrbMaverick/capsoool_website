@@ -13,7 +13,7 @@ export default function Header() {
           <Image
             src={"/images/logo.png"}
             width={200}
-            height={100}
+            height={"20"}
             alt="Capsoool Logo"
           />
         </Link>

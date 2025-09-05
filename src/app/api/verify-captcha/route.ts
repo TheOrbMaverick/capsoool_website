@@ -13,7 +13,6 @@ export async function POST(req: NextRequest) {
       }&response=${response}`,
       { headers: { "Content-Type": "application/json" } }
     );
-    console.log("Data", JSON.stringify(data));
     return Response.json({ message: "success", success: data.success });
   } catch (error) {
     console.log("Error Occured", error);

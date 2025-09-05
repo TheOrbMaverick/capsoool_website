@@ -13,22 +13,28 @@ export default function Hero() {
   const futurePortalRef = useRef<HTMLDivElement>(null);
   const heroIntroHeaderRef = useRef<HTMLSpanElement>(null);
   const introDescRef = useRef<HTMLDivElement>(null);
+  const topImageRef = useRef<HTMLImageElement>(null);
+  const bottomImageRef = useRef<HTMLImageElement>(null);
   useGSAP(() => {
     gsap.registerPlugin(SplitText);
 
     const introSplit = SplitText.create(introDescRef.current, {
       type: "words",
     });
-    gsap.from(heroIntroHeaderRef.current, {
+
+    const tl = gsap.timeline();
+    tl.addLabel("heroHeaderIntro").from(heroIntroHeaderRef.current, {
       y: "100%",
       duration: 1,
       opacity: 0,
     });
-    gsap.from(introSplit.words, {
-      stagger: 0.03,
+    tl.addLabel("introDesc").from(introSplit.words, {
+      stagger: 0.01,
       opacity: 0,
       y: 40,
     });
+    tl.from(topImageRef.current, { opacity: 0, x: 100 }, "introDesc");
+    tl.from(bottomImageRef.current, { opacity: 0, y: 100 }, "heroHeaderIntro");
     // gsap.from(".intro-desc", { y: "100%", stagger: 0.5, delay: 0.8 });
   }, []);
   return (
@@ -87,27 +93,17 @@ export default function Hero() {
           <div className="flex-1 relative border2 col-start-2  col-end-10 lg:col-start-1 lg:col-end-8">
             {/* <div className="w-full border-2 border-red-500 [mask-image:url('/images/home.jpeg')] [mask-position:center]"> */}
             <Image
+              ref={topImageRef}
               src={"/images/home-phone-mockup.png"}
               width={"1000"}
               height={"1000"}
               alt=""
-              className="z-[2]"
+              className="z-[2] scale0"
             />
-            {/* <div className="absolute top-[4%] px-6 -z-[1] w-full h-full overflow-hidden ">
-            <div className="relative w-full h-full rounded-3xl overflow-hidden">
-              <Image
-                src={"/images/security-phone-mockup.png"}
-                width={"1000"}
-                height={"1000"}
-                alt=""
-                // className="object-cove"
-              />
-            </div>
-          </div> */}
-            {/* </div> */}
 
             <div className="absolute -z-[2] w-full h-full top-20 -right-20">
               <Image
+                ref={bottomImageRef}
                 src={"/images/security-phone-mockup.png"}
                 width={"1000"}
                 height={"1000"}

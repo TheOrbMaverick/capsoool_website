@@ -1,8 +1,30 @@
 import { mauline } from "@/utils/fonts";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Dot } from "lucide-react";
-import React from "react";
+import React, { useRef } from "react";
 
 export default function Pricing() {
+  const middlePriceRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: middlePriceRef.current,
+        start: "top bottom",
+        end: "top center",
+        scrub: true,
+      },
+    });
+    tl.from(middlePriceRef.current, {
+      y: 50,
+      scale: 0.85,
+    });
+    tl.from(".side", { y: 70, scale: 0.8, stagger: 0.2 });
+  }, []);
+
   return (
     <section id="pricing" className="">
       <section className="max-w-[1200px] mx-auto py-[4rem] lg:py-[9rem] px-4">
@@ -19,7 +41,7 @@ export default function Pricing() {
         </div>
         <div className="">
           <div className="grid lg:grid-cols-3 items-stretch gap-8">
-            <div className="relative">
+            <div className="relative side">
               <div className="border4 h-full flex flex-col rounded-[2rem] bg-white bg-opacity-20 border-l border-b bg-gradient-tobr tobackground fromblue-500/30 shadow-[-8px_8px_8px_rgba(59,130,246,0.1)]    h[700px] bg-opacity50  px-6 py-8 relative overflow-hidden">
                 <div className="">
                   <div className="flex justify-between items-center mb-4">
@@ -50,7 +72,7 @@ export default function Pricing() {
                 </div>
               </div>
             </div>
-            <div className="relative">
+            <div ref={middlePriceRef} className="relative">
               <div className="border4 h-full flex flex-col rounded-[2rem] bg-gradient-to-br to-background from-blue-500/30 shadow-[8px_8px_8px_rgba(59,130,246,0.2)]  outline-blue-300 outlin outline-2  h[700px] bg-opacity-50  px-6 py-8 relative overflow-hidden">
                 <div className="absolute w-full h-full top-0 left-0 bg-ed-500 -z-[1] backdrop-blur-2xl"></div>
                 <div className="absolute w-full h-full top-0 left-0 bg-red-500/20 scale-[80%] -z-[2]"></div>
@@ -93,7 +115,7 @@ export default function Pricing() {
               </div>
             </div>
             {/*  */}
-            <div className="relative">
+            <div className="relative side">
               <div className="border4 rounded-[2rem] bg-white bg-opacity-20 border-r border-b bg-gradient-tobr tobackground fromblue-500/30 shadow-[8px_8px_8px_rgba(59,130,246,0.1)]    h[700px] bg-opacity50  px-6 py-8 relative overflow-hidden">
                 <div className="">
                   <div className="flex justify-between items-center mb-4">
