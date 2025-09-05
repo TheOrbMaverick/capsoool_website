@@ -11,6 +11,7 @@ export async function POST(req: NextRequest) {
         process.env.NEXT_PUBLIC_GOOGLE_CAPTCHA_SECRET_KEY ||
         "6LcjSL4rAAAAAKX38PqwabfE3BbzpTRe-GQAueNp"
       }&response=${response}`,
+
       { headers: { "Content-Type": "application/json" } }
     );
     return Response.json({ message: "success", success: data.success });
