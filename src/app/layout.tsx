@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import { poppins } from "@/utils/fonts";
 import Footer from "@/components/Footer";
 import "./globals.css";
+import { ToastContainer } from "react-toastify";
 
 export const metadata: Metadata = {
   title: "Capsoool App",
@@ -19,10 +20,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.className} antialiased w-[100vw] overflow-x-clip `}>
+      <body
+        className={`${poppins.className} antialiased w-[100vw] overflow-x-clip `}
+      >
         <Header />
         {children}
         <Footer />
+        <ToastContainer />
       </body>
     </html>
   );

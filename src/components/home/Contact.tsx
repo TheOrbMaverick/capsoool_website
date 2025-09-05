@@ -9,6 +9,7 @@ import z from "zod";
 import emailjs from "@emailjs/browser";
 import ReCAPTCHA from "react-google-recaptcha";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 emailjs.init({ publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY! });
 
@@ -43,11 +44,20 @@ export default function Contact() {
       console.log("Response data", data);
       if (data.success) {
         setIsCaptchaVerified(true);
+        toast("Captcha Verified", { type: "success", autoClose: 1000 });
       } else {
         captchaRef.current?.reset();
+        toast("Captcha Verification failed.", {
+          type: "error",
+          autoClose: 1000,
+        });
       }
     } catch (error) {
       console.log("Error Occured", error);
+      toast("Captcha Verification failed.", {
+        type: "error",
+        autoClose: 1000,
+      });
     }
   }
 
@@ -64,9 +74,11 @@ export default function Contact() {
           message,
         }
       );
+      toast("Message Sent Successfully", { type: "success" });
       console.log(res);
     } catch (error) {
       console.log("Error", error);
+      toast("Error! Message not Sent", { type: "error" });
     } finally {
       setSubmitting(false);
     }
