@@ -161,7 +161,10 @@ export default function Contact() {
                 <div className="">
                   <ReCAPTCHA
                     ref={captchaRef}
-                    sitekey={process.env.NEXT_PUBLIC_GOOGLE_CAPTCHA_SITE_KEY!}
+                    sitekey={
+                      process.env.NEXT_PUBLIC_GOOGLE_CAPTCHA_SITE_KEY! ||
+                      "6LcjSL4rAAAAALYU4sCCKyumHuDno4Z8Xws5ryma"
+                    }
                     onChange={onCaptchaChange}
                   />
                   <p className="text-red-500 text-sm">

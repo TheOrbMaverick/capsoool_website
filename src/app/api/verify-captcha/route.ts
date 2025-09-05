@@ -7,11 +7,10 @@ export async function POST(req: NextRequest) {
     const response = formData.response;
     console.log("Response", response);
     const { data } = await axios.post(
-      `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.NEXT_PUBLIC_GOOGLE_CAPTCHA_SECRET_KEY}&response=${response}`,
-      {
-        secret: "6LcjSL4rAAAAAKX38PqwabfE3BbzpTRe-GQAueNp",
-        response: response,
-      },
+      `https://www.google.com/recaptcha/api/siteverify?secret=${
+        process.env.NEXT_PUBLIC_GOOGLE_CAPTCHA_SECRET_KEY ||
+        "6LcjSL4rAAAAAKX38PqwabfE3BbzpTRe-GQAueNp"
+      }&response=${response}`,
       { headers: { "Content-Type": "application/json" } }
     );
     console.log("Data", JSON.stringify(data));
