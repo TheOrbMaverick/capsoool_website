@@ -170,6 +170,7 @@ export default function Contact() {
                   <p className="text-red-500 text-sm">
                     Verify Captcha to continue
                   </p>
+                  {/*  */}
                 </div>
               )}
 
