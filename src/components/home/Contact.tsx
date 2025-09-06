@@ -42,7 +42,6 @@ export default function Contact() {
       const { data } = await axios.post("/api/verify-captcha", {
         response: value,
       });
-      console.log("Response data", data);
       if (data.success) {
         setIsCaptchaVerified(true);
         toast("Captcha Verified", { type: "success", autoClose: 1000 });
@@ -62,11 +61,6 @@ export default function Contact() {
     }
   }
 
-  console.log(
-    "Google Recaptcha Site Key",
-    process.env.NEXT_PUBLIC_GOOGLE_CAPTCHA_SITE_KEY
-  );
-
   async function submitMessage(values: z.infer<typeof formSchema>) {
     setSubmitting(true);
     try {
@@ -84,8 +78,6 @@ export default function Contact() {
       setValue("name", "");
       setValue("email", "");
       setValue("message", "");
-
-      console.log(res);
     } catch (error) {
       console.log("Error", error);
       toast("Error! Message not Sent", { type: "error" });

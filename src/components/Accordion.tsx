@@ -44,7 +44,6 @@ export default function Accordion({ triggerText, content }: IAccordion) {
   function toggleAccordionFunc() {
     const open = isOpen;
     if (!open) {
-      console.log("Not is open", isOpen);
       openAccordion.play();
       accordionContainerAnimation1.play();
       setIsOpen(true);

@@ -198,5 +198,3 @@ const plans = {
     ],
   },
 };
-
-console.log(plans);

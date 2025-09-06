@@ -5,7 +5,6 @@ export async function POST(req: NextRequest) {
   try {
     const formData = await req.json();
     const response = formData.response;
-    console.log("Response", response);
     const { data } = await axios.post(
       `https://www.google.com/recaptcha/api/siteverify?secret=${
         process.env.GOOGLE_CAPTCHA_SECRET_KEY ||
