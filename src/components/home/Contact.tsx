@@ -95,7 +95,7 @@ export default function Contact() {
           <p
             className={`${mauline.className} mb-4 lg:mb-12 text-[2.5rem] lg:text-[80px] leading-none`}
           >
-            Get in Touch with Us
+            Get in Touch
           </p>
 
           <div className="space-y-4">
