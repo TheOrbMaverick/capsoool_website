@@ -7,7 +7,7 @@ import HamburgerMenu from "./Hamburger";
 
 export default function Header() {
   return (
-    <div className="max-w-[1200px] mx-auto py-8">
+    <div className="max-w-[1200px] mx-auto py-6 lg:py-8">
       <header className="px[5rem] hidden lg:flex items-center justify-between">
         <Link href={"/"} className="flex items-center">
           <Image
@@ -38,12 +38,12 @@ export default function Header() {
         </div>
       </header>
 
-      <header className="px-[1rem]  py-4 flex lg:hidden items-center justify-between relative overflow-x-clip">
+      <header className="px-[1rem]  py4 flex lg:hidden items-center justify-between relative overflow-x-clip">
         <Link href={"/"} className="flex items-center">
           <Image
             src={"/images/logo.png"}
             width={120}
-            height={100}
+            height={10}
             alt="Capsoool Logo"
           />
         </Link>
