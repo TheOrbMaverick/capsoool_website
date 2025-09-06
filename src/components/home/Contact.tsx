@@ -27,6 +27,7 @@ export default function Contact() {
     handleSubmit,
     register,
     formState: { errors },
+    setValue,
   } = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -61,7 +62,10 @@ export default function Contact() {
     }
   }
 
-  console.log("Google Recaptcha Site Key", process.env.NEXT_PUBLIC_GOOGLE_CAPTCHA_SITE_KEY)
+  console.log(
+    "Google Recaptcha Site Key",
+    process.env.NEXT_PUBLIC_GOOGLE_CAPTCHA_SITE_KEY
+  );
 
   async function submitMessage(values: z.infer<typeof formSchema>) {
     setSubmitting(true);
@@ -77,6 +81,10 @@ export default function Contact() {
         }
       );
       toast("Message Sent Successfully", { type: "success" });
+      setValue("name", "");
+      setValue("email", "");
+      setValue("message", "");
+
       console.log(res);
     } catch (error) {
       console.log("Error", error);
@@ -175,9 +183,7 @@ export default function Contact() {
                 <div className="">
                   <ReCAPTCHA
                     ref={captchaRef}
-                    sitekey={
-                      process.env.NEXT_PUBLIC_GOOGLE_CAPTCHA_SITE_KEY!
-                    }
+                    sitekey={process.env.NEXT_PUBLIC_GOOGLE_CAPTCHA_SITE_KEY!}
                     onChange={onCaptchaChange}
                   />
                   <p className="text-red-500 text-sm">
