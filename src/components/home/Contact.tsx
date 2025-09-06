@@ -174,8 +174,7 @@ export default function Contact() {
                   <ReCAPTCHA
                     ref={captchaRef}
                     sitekey={
-                      process.env.NEXT_PUBLIC_GOOGLE_CAPTCHA_SITE_KEY! ||
-                      "6LcjSL4rAAAAALYU4sCCKyumHuDno4Z8Xws5ryma"
+                      process.env.NEXT_PUBLIC_GOOGLE_CAPTCHA_SITE_KEY!
                     }
                     onChange={onCaptchaChange}
                   />
