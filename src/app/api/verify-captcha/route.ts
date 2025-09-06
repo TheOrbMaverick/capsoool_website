@@ -8,7 +8,7 @@ export async function POST(req: NextRequest) {
     console.log("Response", response);
     const { data } = await axios.post(
       `https://www.google.com/recaptcha/api/siteverify?secret=${
-        process.env.NEXT_PUBLIC_GOOGLE_CAPTCHA_SECRET_KEY ||
+        process.env.GOOGLE_CAPTCHA_SECRET_KEY ||
         "6LcjSL4rAAAAAKX38PqwabfE3BbzpTRe-GQAueNp"
       }&response=${response}`,
 
