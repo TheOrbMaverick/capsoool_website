@@ -61,6 +61,8 @@ export default function Contact() {
     }
   }
 
+  console.log("Google Recaptcha Site Key", process.env.NEXT_PUBLIC_GOOGLE_CAPTCHA_SITE_KEY)
+
   async function submitMessage(values: z.infer<typeof formSchema>) {
     setSubmitting(true);
     try {
