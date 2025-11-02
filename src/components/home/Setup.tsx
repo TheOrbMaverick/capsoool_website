@@ -48,12 +48,13 @@ export default function SetupSection() {
       <section
         id="setup"
         ref={containerRef}
-        className={`m min-h-[100dvh] 2xl:min-h-[auto] max-h- [56.25rem] font-sans  z-[2] text-bento-purple-dark relative py[3rem] xl: py-[5rem] px-4 md:px-8 2xl:py-[9rem] border border-blue-200 lg:px-16 2xl:px-32 setup-section bg-blue-500 max-w-[1200px] mx-auto rounded-3xl  bg-opacity-5`}
+        className={`m min-h-[100dvh] 2xl:min-h-[auto] max-h- [56.25rem] font-sans  z-[2] text-bento-purple-dark relative py[3rem] xl: py-[5rem] px-4 md:px-8 2xl:py-[9rem] border border-blue-200 lg:px-16 2xl:px-32 setup-section bg-blue-500 max-w-[1200px] mx-auto rounded-3xl bg-opacity-5`}
       >
+       
         <div>
           <div className="text-center">
             <h2
-              className={`mb-4 lg:mb-8 text-center text-[2.5rem] leading-none lg:text-[80px] md:header-1 ${mauline.className}`}
+              className={`mb-4 lg:mb-8 text-center bg-gradient-to-br from-blue-500 to-red-400 bg-clip-text text-transparent text-[2.5rem] leading-none lg:text-[80px] md:header-1 ${mauline.className}`}
             >
               Easy Setup
             </h2>

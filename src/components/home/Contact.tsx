@@ -93,7 +93,7 @@ export default function Contact() {
       <div className="flex flex-col lg:flex-row gap-12 items-center">
         <div className="flex-1">
           <p
-            className={`${mauline.className} mb-4 lg:mb-12 text-[2.5rem] lg:text-[80px] leading-none`}
+            className={`${mauline.className} bg-gradient-to-br from-blue-500 to-red-400 bg-clip-text text-transparent mb-4 lg:mb-12 text-[2.5rem] lg:text-[80px] leading-none`}
           >
             Get in Touch
           </p>

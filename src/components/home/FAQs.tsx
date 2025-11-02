@@ -7,11 +7,11 @@ export default function FAQs() {
   return (
     <section id="faqs" className="container mx-auto py-[5rem]">
       <div
-        className={`${mauline.className} text-[2.5rem] lg:text-[80px] leading-none text-center`}
+        className={`${mauline.className} text-[2.5rem] bg-gradient-to-br from-blue-500 to-red-400 bg-clip-text text-transparent lg:text-[80px] leading-none text-center`}
       >
         <p>Got Questions?</p>
         <p>
-          We&apos;ve Got <span className="text-blue-500">Answers</span>
+          We&apos;ve Got <span className="textblue-500">Answers</span>
         </p>
       </div>
 
