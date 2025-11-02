@@ -56,7 +56,7 @@ export default function Pricing() {
       <section className="max-w-[1200px] mx-auto py-[4rem] lg:py-[9rem] px-4">
         <div className="mb-16">
           <h3
-            className={`${mauline.className} text-[2rem] lg:text-[80px] text-center`}
+            className={`${mauline.className} text-[2rem] lg:text-[80px] text-center bg-gradient-to-br from-blue-500 to-red-400 bg-clip-text text-transparent`}
           >
             Pricing Plans
           </h3>

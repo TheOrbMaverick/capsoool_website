@@ -60,8 +60,14 @@ export default function Hero() {
             <p
               className={`text-[2.5rem] relative overflow-y-clip  lg:text-[80px]  leading-none ${mauline.className}`}
             >
-              <span ref={heroIntroHeaderRef} className="inline-block relative">
-                Preserve Your <span className="text-blue-500">Memories</span>.
+              <span
+                ref={heroIntroHeaderRef}
+                className="inline-block relative bg-gradient-to-br from-blue-500 to-red-400 bg-clip-text text-transparent"
+              >
+                {/* Preserve Your <span className="text-blue-500">Memories</span>. */}
+                Where Memories
+                <br />
+                are Preserved
               </span>
               {/* Protect Your Legacy. */}
             </p>
@@ -89,7 +95,7 @@ export default function Hero() {
           </div>
         </section>
 
-        <section className="grid grid-cols-12 self-start lg:justify lg:col-start-8 lg:col-end-13 mt-6 lg:mt-12 lg:gap-8 flex-1">
+        <section className="grid grid-cols-12 selfstart lg:justify lg:col-start-8 lg:col-end-13 mt-6 lg:mt-12 lg:gap-8 flex-1">
           <div className="flex-1 relative border2 col-start-2  col-end-10 lg:col-start-1 lg:col-end-8">
             {/* <div className="w-full border-2 border-red-500 [mask-image:url('/images/home.jpeg')] [mask-position:center]"> */}
             <Image

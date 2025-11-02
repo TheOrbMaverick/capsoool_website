@@ -16,6 +16,33 @@ import TextPlugin from "gsap/TextPlugin";
 export default function SetupSection() {
   const containerRef = useRef<HTMLDivElement>(null);
 
+  // useGSAP(() => {
+  //   let sections = gsap.utils.toArray(".section");
+  //   gsap.registerPlugin(ScrollTrigger);
+  //   let horizontalScrollTween = gsap.to(sections, {
+  //     xPercent: -100 * (sections.length - 1),
+  //     ease: "none",
+  //     duration: 6,
+  //     scrollTrigger: {
+  //       trigger: containerRef.current,
+  //       pin: true,
+  //       scrub: true,
+  //       markers: true,
+  //       end: `+=${containerRef.current?.offsetWidth}`,
+  //     },
+  //   });
+
+  //   gsap.to(".box", {
+  //     rotate: 360,
+  //     duration: 1,
+  //     scrollTrigger: {
+  //       containerAnimation: horizontalScrollTween,
+  //       trigger: ".box",
+  //       start: "left center",
+  //     },
+  //   });
+  // }, []);
+
   return (
     <div className="px-4">
       <section
@@ -75,7 +102,6 @@ export default function SetupSection() {
                       Recipients
                     </p>
                     <br />
-                    {/* <br /> */}
                     <p className="">
                       Persons you trust to uphold the Confidentiality of the
                       Documents.
@@ -90,7 +116,6 @@ export default function SetupSection() {
                       credentials
                     </p>
                     <br />
-                    {/* <br /> */}
                     <p className="">
                       Easily Store a newly created Capsoool by Submiting the
                       Create Capsoool Form.
@@ -105,7 +130,6 @@ export default function SetupSection() {
                       to add a new Capsool
                     </p>
                     <br />
-                    {/* <br /> */}
                     <p className="">
                       Each Capsoool offers you the flexbility to save your
                       memories in various digital formats.
@@ -314,7 +338,6 @@ export default function SetupSection() {
                 credentials
               </p>
               <br />
-              {/* <br /> */}
               <p className="">
                 Easily Store a newly created Capsoool by Submiting the Create
                 Capsoool Form.
@@ -327,7 +350,6 @@ export default function SetupSection() {
                 new Capsool
               </p>
               <br />
-              {/* <br /> */}
               <p className="">
                 Each Capsoool offers you the flexbility to save your memories in
                 various digital formats.
@@ -341,7 +363,6 @@ export default function SetupSection() {
                 deliver your Preserved Memories to the Specified Recipients
               </p>
               <br />
-              {/* <br /> */}
               <p className="">
                 Persons you trust to uphold the Confidentiality of the
                 Documents.
@@ -360,6 +381,22 @@ export default function SetupSection() {
           </div>
         </div>
       </section>
+
+      {/* <div ref={containerRef} className="flex min-w-[100vw]">
+        {["#23de43", "#aa004e", "#3434ee", "#007023", "#a4ae60"].map(
+          (item, index) => (
+            <div
+              key={index}
+              style={{ backgroundColor: item }}
+              className="h-dvh min-w-[100vw] section flex justify-center items-center"
+            >
+              <div
+                className={`box w-20 h-20 bg-gradient-to-r from-white to-black rounded-2xl box-${index}`}
+              ></div>
+            </div>
+          )
+        )}
+      </div> */}
     </div>
   );
 }
