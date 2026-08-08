@@ -10,7 +10,7 @@ import ReactLenis from "lenis/react";
 
 const Home: React.FC = () => {
   return (
-    <div className="min-h-[100dvh] pt-16">
+    <div className="min-h-[100dvh] pt-16 lg:pt-0">
       <ReactLenis options={{}} root />
       <Hero />
       <Features />

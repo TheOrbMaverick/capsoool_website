@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import HamburgerMenu from "./Hamburger";
+import WaitlistModal, { WaitlistTrigger } from "./WaitlistModal";
 
 export default function Header() {
   return (
@@ -36,11 +37,9 @@ export default function Header() {
                 </ul>
               </nav>
 
-              <button
-                className={`bg-blue-500 px-6 py-2 font-semibold roundedlg hover:bg-transparent transition-all duration-300 outline-2 outline-none hover:outline-blue-500 text-white rounded-full`}
-              >
-                Download
-              </button>
+              <WaitlistModal>
+                <WaitlistTrigger />
+              </WaitlistModal>
             </div>
           </header>
         </div>

@@ -4,6 +4,7 @@ import gsap from "gsap";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
+import WaitlistModal, { WaitlistTrigger } from "./WaitlistModal";
 
 export default function HamburgerMenu() {
   const location = usePathname();
@@ -105,12 +106,17 @@ export default function HamburgerMenu() {
             </div>
           </div>
 
-          {/* <Link
-            href={"/contact"}
-            className="inline-flex relative px-4 rounded-lg py-4 gap-2 items-center font-bold text-white bg-primary hover:bg-button-hover active:bg-button-pressed  mt-auto"
-          >
-            Request a Demo
-          </Link> */}
+          <div className="mt-auto">
+            <WaitlistModal>
+              <WaitlistTrigger
+                className="w-full bg-blue-500 px-6 py-3 font-semibold text-base hover:bg-blue-600
+                  transition-all duration-300 text-white rounded-full
+                  shadow-[0_4px_20px_rgba(59,130,246,0.3)]"
+              >
+                Join Waitlist
+              </WaitlistTrigger>
+            </WaitlistModal>
+          </div>
         </div>
       </div>
     </div>

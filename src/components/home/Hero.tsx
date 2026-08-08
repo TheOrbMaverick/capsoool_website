@@ -1,13 +1,12 @@
 "use client";
 import React, { useRef } from "react";
-import AndroidButton from "../AndroidButton";
-import IOSButton from "../IOSButton";
 import { mauline } from "@/utils/fonts";
 import Image from "next/image";
 import Future from "../abstracts/Future";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
+import WaitlistModal, { WaitlistTrigger } from "../WaitlistModal";
 
 export default function Hero() {
   const futurePortalRef = useRef<HTMLDivElement>(null);
@@ -40,7 +39,7 @@ export default function Hero() {
   return (
     <section className="overflow-x-hidden">
       <div className="absolute -z-[2] w-full left-0 text-white text-opacity-5 overflow-x-hidden lg:left-[25%]">
-        <div ref={futurePortalRef} className="inline-block">
+        <div ref={futurePortalRef} className="inline-block opacity-20">
           <Future
             className="stroke-blue-300/10 scale"
             stroke="rgb(147 197 253 / 0.1)"
@@ -71,7 +70,10 @@ export default function Hero() {
               </span>
               {/* Protect Your Legacy. */}
             </p>
-            <div ref={introDescRef} className="max-w-[500px] space-y-2 ">
+            <div
+              ref={introDescRef}
+              className="max-w-[500px] mx-auto lg:mx-0 space-y-2 "
+            >
               <p className="relative overflow-hidden">
                 <span className="intro-desc inline-block">
                   We don’t know what the future holds — but with Capsoools, you
@@ -89,9 +91,17 @@ export default function Hero() {
               </p>
             </div>
           </div>
-          <div className=" flex justify-center lg:justify-start gap-4">
-            <IOSButton />
-            <AndroidButton />
+          <div className="flex justify-center lg:justify-start gap-4">
+            <WaitlistModal>
+              <WaitlistTrigger
+                className="bg-blue-500 px-8 py-3 font-semibold text-base hover:bg-transparent
+                  transition-all duration-300 outline-2 outline-none hover:outline-blue-500
+                  text-white rounded-full shadow-[0_4px_24px_rgba(59,130,246,0.35)]
+                  hover:shadow-[0_4px_32px_rgba(59,130,246,0.55)]"
+              >
+                Join Waitlist
+              </WaitlistTrigger>
+            </WaitlistModal>
           </div>
         </section>
 
