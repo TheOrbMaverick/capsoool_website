@@ -49,6 +49,7 @@ export default function HamburgerMenu() {
       slideOutRef.current?.play();
       setMenuOpen(false);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location]);
 
   return (

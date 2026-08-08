@@ -144,8 +144,8 @@ export default function WaitlistModal({ children }: WaitlistModalProps) {
               Join the Waitlist
             </Dialog.Title>
             <Dialog.Description className="mt-2 text-sm text-white/60 leading-relaxed">
-              Be the first to know when Capsoool launches. We'll send you an
-              exclusive early access invite — no spam, ever.
+              Be the first to know when Capsoool launches. We&apos;ll send you
+              an exclusive early access invite — no spam, ever.
             </Dialog.Description>
           </div>
 
