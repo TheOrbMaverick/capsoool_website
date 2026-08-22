@@ -113,7 +113,7 @@ export default function Hero() {
               src={"/images/home-phone-mockup.png"}
               width={"1000"}
               height={"1000"}
-              alt=""
+              alt="Capsoool mobile application interface on smartphone"
               className="z-[2] scale0"
             />
 
@@ -123,7 +123,7 @@ export default function Hero() {
                 src={"/images/security-phone-mockup.png"}
                 width={"1000"}
                 height={"1000"}
-                alt=""
+                alt="Capsoool secure encryption and digital memory storage features"
               />
             </div>
           </div>

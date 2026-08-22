@@ -1,17 +1,40 @@
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Delete Your Account",
+  description:
+    "Instructions and procedure for requesting full account deletion and removing associated data from Capsoool.",
+  alternates: {
+    canonical: "/deleteaccount",
+  },
+};
+
 export default function DeleteAccountPage() {
   return (
-    <div className="p-8 max-w-2xl mx-auto">
+    <div className="p-8 md:pt-20 max-w-2xl mx-auto">
       <h1 className="text-2xl font-bold mb-4">Delete Your Capsoool Account</h1>
-      
+
       <p className="mb-4">
-        If you wish to delete your Capsoool account and all associated data, you can request deletion by contacting us directly.
+        If you wish to delete your Capsoool account and all associated data, you
+        can request deletion by contacting us directly.
       </p>
 
-      <h2 className="text-xl font-semibold mb-2">How to Request Account Deletion</h2>
+      <h2 className="text-xl font-semibold mb-2">
+        How to Request Account Deletion
+      </h2>
       <ul className="list-disc list-inside mb-4">
-        <li>Send an email to <strong>support@capsoool.com</strong> from the email associated with your account.</li>
-        <li>Include the subject line: <strong>&quot;Delete My Capsoool Account&quot;</strong>.</li>
-        <li>We will process your request within 7 business days and confirm via email.</li>
+        <li>
+          Send an email to <strong>support@capsoool.com</strong> from the email
+          associated with your account.
+        </li>
+        <li>
+          Include the subject line:{" "}
+          <strong>&quot;Delete My Capsoool Account&quot;</strong>.
+        </li>
+        <li>
+          We will process your request within 7 business days and confirm via
+          email.
+        </li>
       </ul>
 
       <h2 className="text-xl font-semibold mb-2">What Data Will Be Deleted</h2>
@@ -22,11 +45,13 @@ export default function DeleteAccountPage() {
       </ul>
 
       <p className="mb-4">
-        Some data may be retained temporarily (up to 30 days) for legal or security reasons as required by law.
+        Some data may be retained temporarily (up to 30 days) for legal or
+        security reasons as required by law.
       </p>
 
       <p>
-        If you have any questions, please email us at <strong>support@capsoool.com</strong>.
+        If you have any questions, please email us at{" "}
+        <strong>support@capsoool.com</strong>.
       </p>
     </div>
   );

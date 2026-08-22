@@ -1,9 +1,19 @@
+import { Metadata } from "next";
 import { mauline } from "@/utils/fonts";
 import React from "react";
 
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+  description:
+    "Learn about Capsoool's Privacy Policy, including how we collect, process, store, and safeguard your personal information and user content.",
+  alternates: {
+    canonical: "/privacy-policy",
+  },
+};
+
 export default function PrivacyPolicy() {
   return (
-    <div className="max-w-[1200px] mx-auto pt-8 pb-20 px-4">
+    <div className="max-w-[1200px] mx-auto pt-8 md:pt-20 pb-20 px-4">
       <div className="">
         <h3
           className={`text-center text-[2rem] lg:text-[80px] ${mauline.className}`}

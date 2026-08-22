@@ -1,9 +1,19 @@
+import { Metadata } from "next";
 import { mauline } from "@/utils/fonts";
 import React from "react";
 
-export default function PrivacyPolicy() {
+export const metadata: Metadata = {
+  title: "Disclaimer & Legal Notice",
+  description:
+    "Legal disclaimer regarding Capsoool services, clarification on non-legal advice, and usage guidelines.",
+  alternates: {
+    canonical: "/disclaimer",
+  },
+};
+
+export default function Disclaimer() {
   return (
-    <div className="max-w-[1200px] mx-auto pt-8 pb-20 px-4">
+    <div className="max-w-[1200px] mx-auto pt-8 md:pt-20 pb-20 px-4">
       <div className="">
         <h3
           className={`text-center text-[2rem] lg:text-[80px] ${mauline.className}`}

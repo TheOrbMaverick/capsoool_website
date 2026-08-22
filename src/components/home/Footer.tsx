@@ -49,15 +49,18 @@ export default function Footer() {
             <p className={`${mauline.className} mb-5 text-xl`}>Legal</p>
 
             <div className="flex flex-col gap-3">
-              {["Privacy Policy", "Terms of Service", "Disclaimer"].map(
-                (item, i) => (
-                  <p key={i} className="text-nowrap">
-                    <Link href={`${item.split(" ").join("-").toLowerCase()}`}>
-                      {item}
-                    </Link>
-                  </p>
-                )
-              )}
+              {[
+                { name: "Privacy Policy", href: "/privacy-policy" },
+                { name: "Terms of Service", href: "/terms-of-service" },
+                { name: "Disclaimer", href: "/disclaimer" },
+                { name: "Cookie Policy", href: "/cookies" },
+                { name: "Request Data Deletion", href: "/delete-data" },
+                { name: "Delete Account", href: "/deleteaccount" },
+              ].map((item, i) => (
+                <p key={i} className="text-nowrap">
+                  <Link href={item.href}>{item.name}</Link>
+                </p>
+              ))}
             </div>
           </div>
 
