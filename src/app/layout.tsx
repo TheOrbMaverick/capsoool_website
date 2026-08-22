@@ -4,6 +4,7 @@ import { poppins } from "@/utils/fonts";
 import Footer from "@/components/Footer";
 import "./globals.css";
 import { ToastContainer } from "react-toastify";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
   title: "Capsoool App",
@@ -18,6 +19,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const gaId = process.env.NEXT_PUBLIC_GA_ID || "G-RW7GGLB4QB";
+
   return (
     <html lang="en">
       <body
@@ -28,6 +31,7 @@ export default function RootLayout({
         <Footer />
         <ToastContainer />
       </body>
+      <GoogleAnalytics gaId={gaId} />
     </html>
   );
 }
