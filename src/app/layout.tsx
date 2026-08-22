@@ -12,6 +12,10 @@ export const metadata: Metadata = {
   icons: {
     icon: "/capsoool_logo.png", // Add your favicon here
   },
+  openGraph: {
+    type: "website",
+    images: "/opengraph-image.png",
+  },
 };
 
 export default function RootLayout({
