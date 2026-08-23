@@ -89,13 +89,12 @@ export const metadata: Metadata = {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "",
   },
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const gaId = process.env.NEXT_PUBLIC_GA_ID || "G-RW7GGLB4QB";
+  const gaId = process.env.NEXT_PUBLIC_GA_ID || "G-DE5KLRYQYP";
 
   return (
     <html lang="en">

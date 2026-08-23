@@ -41,7 +41,7 @@ export async function POST(req: NextRequest) {
       fields,
       context: {
         // pageUri and pageName help HubSpot attribute the submission correctly.
-        pageUri: req.headers.get("referer") ?? "https://capsoool.com",
+        pageUri: req.headers.get("referer") ?? "https://www.capsoool.com",
         pageName: "Capsoool — Join the Waitlist",
         // hutk is the HubSpot tracking cookie — we omit it here since this
         // is a server-side submission; HubSpot handles anonymous contacts fine.

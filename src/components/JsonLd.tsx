@@ -2,7 +2,8 @@ import React from "react";
 import { faqs } from "@/constants/faqs";
 
 export default function JsonLd() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://capsoool.com";
+  const siteUrl =
+    process.env.NEXT_PUBLIC_SITE_URL || "https://www.capsoool.com";
 
   const organizationSchema = {
     "@context": "https://schema.org",
