@@ -7,6 +7,7 @@ import z from "zod";
 import { toast } from "react-toastify";
 import { X, Mail, User, Loader2, Sparkles } from "lucide-react";
 import { mauline } from "@/utils/fonts";
+import { event as trackMetaEvent } from "@/utils/metaPixel";
 
 // ─── Schema ────────────────────────────────────────────────────────────────
 const waitlistSchema = z.object({
@@ -72,6 +73,7 @@ export default function WaitlistModal({ children }: WaitlistModalProps) {
       const data = await res.json();
 
       if (data.success) {
+        trackMetaEvent("Lead", { content_name: "Waitlist Signup" });
         toast("🎉 You're on the list! We'll be in touch soon.", {
           type: "success",
           autoClose: 4000,

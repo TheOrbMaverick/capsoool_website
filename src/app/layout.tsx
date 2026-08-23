@@ -6,6 +6,7 @@ import "./globals.css";
 import { ToastContainer } from "react-toastify";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import JsonLd from "@/components/JsonLd";
+import MetaPixel from "@/components/MetaPixel";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.capsoool.com";
 
@@ -100,6 +101,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <JsonLd />
+        <MetaPixel />
       </head>
       <body
         className={`${poppins.className} antialiased w-[100vw] overflow-x-clip `}
